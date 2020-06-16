@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestmentTracker", "InvestmentTracker\InvestmentTracker.csproj", "{2E9646BB-A421-4B7F-8335-5223B806EA76}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManageAmount", "ManageAmount\ManageAmount.csproj", "{3CB06795-37D1-458A-92D1-2D5C4C7A3CAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestmentTrackerWPF", "InvestmentTrackerWPF\InvestmentTrackerWPF.csproj", "{9FA2F20B-5761-420B-89B9-31D332E9D3EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{2E9646BB-A421-4B7F-8335-5223B806EA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E9646BB-A421-4B7F-8335-5223B806EA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E9646BB-A421-4B7F-8335-5223B806EA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB06795-37D1-458A-92D1-2D5C4C7A3CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB06795-37D1-458A-92D1-2D5C4C7A3CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB06795-37D1-458A-92D1-2D5C4C7A3CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB06795-37D1-458A-92D1-2D5C4C7A3CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA2F20B-5761-420B-89B9-31D332E9D3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA2F20B-5761-420B-89B9-31D332E9D3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA2F20B-5761-420B-89B9-31D332E9D3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA2F20B-5761-420B-89B9-31D332E9D3EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
