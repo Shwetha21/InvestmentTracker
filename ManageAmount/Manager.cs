@@ -15,20 +15,20 @@ namespace ManageAmount
 
         }
 
-        public void AddIncome(int amount, DateTime day)
+        public void AddIncome(int amount)
         {
             using(var db = new InvestmentdbContext())
             {
-                db.Add(new Income { IncomeReceived = amount, Day = day });
+                db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now });
                 db.SaveChanges();
             }
         }
 
-        public void AddExpenditure(int amount, DateTime day)
+        public void AddExpenditure(int amount)
         {
             using (var db = new InvestmentdbContext())
             {
-                db.Add(new Expenditure { ExpenseAmount = amount, Day = day });
+                db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now });
                 db.SaveChanges();
             }
         }

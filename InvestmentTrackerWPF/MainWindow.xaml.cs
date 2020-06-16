@@ -41,14 +41,14 @@ namespace InvestmentTrackerWPF
 
         private void Button_AddIncome(object sender, RoutedEventArgs e)
         {
-            _manager.AddIncome(Int32.Parse(TextIncome.Text), DateTime.Parse(TextDay.Text));
+            _manager.AddIncome(Int32.Parse(TextIncome.Text));
             PopulateIncomeList();
 
         }
 
         private void Button_AddExpenditure(object sender, RoutedEventArgs e)
         {
-            _manager.AddExpenditure(Int32.Parse(TextExpenditure.Text), DateTime.Parse(TextDay.Text));
+            _manager.AddExpenditure(Int32.Parse(TextExpenditure.Text));
             PopulateExpenditureList();
         }
 
