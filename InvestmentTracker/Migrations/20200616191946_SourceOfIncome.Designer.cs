@@ -4,14 +4,16 @@ using InvestmentTracker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InvestmentTracker.Migrations
 {
     [DbContext(typeof(InvestmentdbContext))]
-    partial class InvestmentdbContextModelSnapshot : ModelSnapshot
+    [Migration("20200616191946_SourceOfIncome")]
+    partial class SourceOfIncome
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,6 @@ namespace InvestmentTracker.Migrations
 
                     b.Property<int>("ExpenseAmount")
                         .HasColumnType("int");
-
-                    b.Property<string>("PurposeOfExpenditure")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ExpenditureId");
 

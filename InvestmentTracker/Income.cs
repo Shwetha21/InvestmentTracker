@@ -12,6 +12,8 @@ namespace InvestmentTracker
 
         public float IncomeReceived { get; set; }
 
+        public string SourceOfIncome { get; set; }
+
 
     }
 

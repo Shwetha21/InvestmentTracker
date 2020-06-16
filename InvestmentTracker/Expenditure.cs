@@ -11,5 +11,7 @@ namespace InvestmentTracker
 
         public int ExpenseAmount { get; set; }
 
+        public string PurposeOfExpenditure { get; set; }
+
     }
 }
