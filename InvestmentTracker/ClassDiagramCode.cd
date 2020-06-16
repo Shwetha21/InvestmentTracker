@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InvestmentTracker.Income" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAEAAAAAAAAAAAAAAAAAACQAAAAAAA=</HashCode>
+      <FileName>Customisation\Income.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentTracker.Expenditure" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAEEAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Customisation\Expenditure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InvestmentTracker.InvestmentdbContext" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAE=</HashCode>
+      <FileName>InvestmentdbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
