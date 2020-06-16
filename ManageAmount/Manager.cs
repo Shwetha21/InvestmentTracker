@@ -2,6 +2,7 @@
 using InvestmentTracker;
 using System.Linq;
 using System.Collections.Generic;
+using System.Xml.Schema;
 
 namespace ManageAmount
 {
@@ -15,6 +16,7 @@ namespace ManageAmount
 
         }
 
+        // Adding entry to database
         public void AddIncome(int amount)
         {
             using(var db = new InvestmentdbContext())
@@ -33,6 +35,8 @@ namespace ManageAmount
             }
         }
 
+
+         // Display The data
         public List<Income> DisplayIncome()
         {
             using (var db = new InvestmentdbContext())
@@ -60,5 +64,25 @@ namespace ManageAmount
         }
 
 
+        //To find the total income
+        public float TotalIncome()
+        {
+            float total = 0;
+            using (var db = new InvestmentdbContext())
+            {
+                total = db.Incomes.Sum(s => s.IncomeReceived);
+            }
+            return total;
+        }
+
+        public float TotalExpenditure()
+        {
+            float total = 0;
+            using (var db = new InvestmentdbContext())
+            {
+                total = db.Expenditures.Sum(s => s.ExpenseAmount);
+            }
+            return total;
+        }
     }
 }
