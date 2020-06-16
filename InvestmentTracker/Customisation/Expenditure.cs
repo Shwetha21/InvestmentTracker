@@ -8,7 +8,7 @@ namespace InvestmentTracker
     {
         public override string ToString()
         {
-            return $" {ExpenditureId} {ExpenseAmount} {Day}";
+            return $" {ExpenditureId} {ExpenseAmount} {Day} {PurposeOfExpenditure}";
         }
     }
 }

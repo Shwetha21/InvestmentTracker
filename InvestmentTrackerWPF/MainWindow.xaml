@@ -8,19 +8,20 @@
         Title="MainWindow" Height="450" Width="500">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="177*"/>
-            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="146*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="ListBoxIncome" Margin="0,0,104,217" Background="#FFE0ACAC" SelectionChanged="ListBoxIncome_SelectionChanged"/>
-        <ListBox x:Name="ListBoxExpenditure" Margin="0,217,104,0" Background="#FFB29090" SelectionChanged="ListBoxExpenditure_SelectionChanged"/>
-        <Label x:Name="LabelDay" Content="Day" HorizontalAlignment="Left" Margin="250,0,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FF9CA1DA"/>
-        <Label x:Name="LabelIncome" Content="Income" HorizontalAlignment="Left" Margin="250,47,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FFA9ADD8"/>
-        <Label x:Name="LabelExpenditure" Content="Expenditure" HorizontalAlignment="Left" Margin="250,94,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FFC3C5DC"/>
-        <TextBox x:Name="TextDay" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Grid.ColumnSpan="2" Height="47" Background="#FFA1DEBA"/>
-        <TextBox x:Name="TextIncome" HorizontalAlignment="Left" Margin="333,47,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Grid.ColumnSpan="2" Height="47" Background="#FFBCE4CC"/>
-        <TextBox x:Name="TextExpenditure" HorizontalAlignment="Left" Margin="333,94,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Grid.ColumnSpan="2" Height="47" Background="#FFC9E4D4"/>
-        <Button Content="ADD Income" HorizontalAlignment="Left" Margin="257,205,0,0" VerticalAlignment="Top" Height="48" Width="87" Background="#FFC59DB8" Click="Button_AddIncome"/>
-        <Button Content="ADD Expense" HorizontalAlignment="Left" Margin="49,205,0,0" VerticalAlignment="Top" Height="48" Width="87" Background="#FFE297CA" Grid.Column="1" Click="Button_AddExpenditure"/>
+        <ListBox x:Name="ListBoxIncome" Margin="0,0,104,217" Background="#FFE0ACAC" SelectionChanged="ListBoxIncome_SelectionChanged" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="ListBoxExpenditure" Margin="0,217,104,0" Background="#FFB29090" SelectionChanged="ListBoxExpenditure_SelectionChanged" Grid.ColumnSpan="2"/>
+        <Label x:Name="LabelDay" Content="Day" HorizontalAlignment="Left" Margin="121,0,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FF9CA1DA" Grid.Column="1"/>
+        <Label x:Name="LabelIncome" Content="Income" HorizontalAlignment="Left" Margin="121,47,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FFA9ADD8" Grid.Column="1"/>
+        <Label x:Name="LabelExpenditure" Content="Expenditure" HorizontalAlignment="Left" Margin="121,94,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FFC3C5DC" Grid.Column="1"/>
+        <TextBox x:Name="TextDay" HorizontalAlignment="Left" Margin="204,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Grid.ColumnSpan="2" Height="47" Background="#FFA1DEBA" Grid.Column="1"/>
+        <TextBox x:Name="TextIncome" HorizontalAlignment="Left" Margin="204,47,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Grid.ColumnSpan="2" Height="47" Background="#FFBCE4CC" Grid.Column="1"/>
+        <TextBox x:Name="TextExpenditure" HorizontalAlignment="Left" Margin="204,94,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="166" Grid.ColumnSpan="2" Height="47" Background="#FFC9E4D4" Grid.Column="1"/>
+        <Button Content="ADD Income" HorizontalAlignment="Left" Margin="128,205,0,0" VerticalAlignment="Top" Height="48" Width="87" Background="#FFC59DB8" Click="Button_AddIncome" Grid.Column="1"/>
+        <Button Content="ADD Expense" HorizontalAlignment="Left" Margin="49,205,0,0" VerticalAlignment="Top" Height="48" Width="87" Background="#FFE297CA" Grid.Column="2" Click="Button_AddExpenditure"/>
 
 
     </Grid>

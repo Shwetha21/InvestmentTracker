@@ -45,6 +45,9 @@ The 3 layer project helps you to store your income and expenditure and can be vi
     * Project board was very helpful in planning and organising.
     * Simple to Complex approach in adding functionality to the application is helping in moving one step at a time.
 
+* Things to Improve:
+    * Commit to GitHub for each user story. 
+
 ### Sprint 2
 #### Goal: To Add Source column for Income Table and purpose column for Expenditure table.
 * To add Source column in Income Table and Purpose of expenditure in Expenditure table.
