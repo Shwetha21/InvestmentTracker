@@ -11,8 +11,8 @@
             <ColumnDefinition Width="177*"/>
             <ColumnDefinition Width="73*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="ListBoxIncome" Margin="0,0,104,217" Background="#FFE0ACAC"/>
-        <ListBox x:Name="ListBoxExpenditure" Margin="0,217,104,0" Background="#FFB29090"/>
+        <ListBox x:Name="ListBoxIncome" Margin="0,0,104,217" Background="#FFE0ACAC" SelectionChanged="ListBoxIncome_SelectionChanged"/>
+        <ListBox x:Name="ListBoxExpenditure" Margin="0,217,104,0" Background="#FFB29090" SelectionChanged="ListBoxExpenditure_SelectionChanged"/>
         <Label x:Name="LabelDay" Content="Day" HorizontalAlignment="Left" Margin="250,0,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FF9CA1DA"/>
         <Label x:Name="LabelIncome" Content="Income" HorizontalAlignment="Left" Margin="250,47,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FFA9ADD8"/>
         <Label x:Name="LabelExpenditure" Content="Expenditure" HorizontalAlignment="Left" Margin="250,94,0,0" VerticalAlignment="Top" Width="83" Height="47" Background="#FFC3C5DC"/>

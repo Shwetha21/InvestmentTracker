@@ -7,6 +7,9 @@ namespace ManageAmount
 {
     public class Manager
     {
+        public Income SelectedIncome { get; set; }
+        public Expenditure SelectedExpenditure { get; set; }
+
         public Manager()
         {
 
@@ -44,6 +47,16 @@ namespace ManageAmount
             {
                 return db.Expenditures.ToList();
             }
+        }
+
+        public void SetSelectedIncome(object selectedItem)
+        {
+            SelectedIncome = (Income)selectedItem;
+        }
+
+        public void SetSelectedExpenditure(object selectedItem)
+        {
+            SelectedExpenditure = (Expenditure)selectedItem;
         }
 
 

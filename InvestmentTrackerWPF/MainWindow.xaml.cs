@@ -51,5 +51,58 @@ namespace InvestmentTrackerWPF
             _manager.AddExpenditure(Int32.Parse(TextExpenditure.Text), DateTime.Parse(TextDay.Text));
             PopulateExpenditureList();
         }
+
+        private void PopulateIncomeFields()
+        {
+            if (_manager.SelectedIncome != null)
+            {
+                TextIncome.Text = _manager.SelectedIncome.IncomeReceived.ToString();
+                TextDay.Text = _manager.SelectedIncome.Day.ToString();
+                TextExpenditure.Text = null;
+            }
+            else
+            {
+                TextIncome.Text = null;
+                TextExpenditure.Text = null;
+                TextDay.Text = null;
+            }
+        }
+
+        private void PopulateExpenditureField()
+        {
+            if (_manager.SelectedExpenditure != null)
+            {
+                TextExpenditure.Text = _manager.SelectedExpenditure.ExpenseAmount.ToString();
+                TextDay.Text = _manager.SelectedExpenditure.Day.ToString();
+                TextIncome.Text = null;
+            }
+            else
+            {
+                TextIncome.Text = null;
+                TextExpenditure.Text = null;
+                TextDay.Text = null;
+            }
+        }
+            
+
+        private void ListBoxIncome_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListBoxIncome.SelectedItem != null)
+            {
+                _manager.SetSelectedIncome(ListBoxIncome.SelectedItem);
+                PopulateIncomeFields();
+            }
+
+        }
+
+        private void ListBoxExpenditure_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListBoxExpenditure.SelectedItem != null)
+            {
+                _manager.SetSelectedExpenditure(ListBoxExpenditure.SelectedItem);
+                PopulateExpenditureField();
+            }
+
+        }
     }
 }
