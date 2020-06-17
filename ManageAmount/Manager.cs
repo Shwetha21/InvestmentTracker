@@ -64,7 +64,7 @@ namespace ManageAmount
         }
 
 
-        //To find the total income
+        //To find the total income (Query the DataBase)
         public float TotalIncome()
         {
             float total = 0;
@@ -75,6 +75,8 @@ namespace ManageAmount
             return total;
         }
 
+
+         // To find Total expenditure
         public float TotalExpenditure()
         {
             float total = 0;
@@ -84,5 +86,40 @@ namespace ManageAmount
             }
             return total;
         }
+
+        //to Delete Wrong Income
+        private void Delete_Income(int id)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                var queryIncome = db.Incomes.OrderBy(i => i.IncomeId);
+                
+                foreach (var Iid in queryIncome)
+                {
+                    if(Iid.IncomeId == id)
+                    {
+                        db.Remove(Iid);
+                    }
+                }
+            }
+        }
+
+        //to Delete Wrong Expenditure
+        private void Delete_Expenditure(int id)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                var queryIncome = db.Expenditures.OrderBy(i => i.ExpenditureId);
+
+                foreach (var Eid in queryIncome)
+                {
+                    if (Eid.ExpenditureId == id)
+                    {
+                        db.Remove(Eid);
+                    }
+                }
+            }
+        }
+
     }
 }
