@@ -88,7 +88,7 @@ namespace ManageAmount
         }
 
         //to Delete Wrong Income
-        private void Delete_Income(int id)
+        public void Delete_Income(int id)
         {
             using (var db = new InvestmentdbContext())
             {
@@ -105,7 +105,7 @@ namespace ManageAmount
         }
 
         //to Delete Wrong Expenditure
-        private void Delete_Expenditure(int id)
+        public void Delete_Expenditure(int id)
         {
             using (var db = new InvestmentdbContext())
             {
@@ -118,6 +118,21 @@ namespace ManageAmount
                         db.Remove(Eid);
                     }
                 }
+            }
+        }
+
+        //To check the balance
+        public float BalanceCheck()
+        {
+            float TIncome = TotalIncome();
+            float TExpenditure = TotalExpenditure();
+            if (TIncome - TExpenditure >= 0)
+            {
+                return TIncome - TExpenditure;
+            }
+            else
+            {
+                return 0; //if 0 display you are in debt.
             }
         }
 

@@ -25,5 +25,14 @@ namespace InvestmenttrackerUnitTest
             float etotal = _mymanager.TotalExpenditure();
             Assert.AreEqual(1660, etotal);
         }
+
+        [Test]
+
+        public void TestBalance()
+        {
+            Manager _mymanager = new Manager();
+            float mybalance = _mymanager.BalanceCheck();
+            Assert.AreEqual(1200, mybalance);
+        }
     }
 }
