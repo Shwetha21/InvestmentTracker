@@ -11,9 +11,19 @@ namespace InvestmenttrackerUnitTest
         }
 
         [Test]
-        public void Test1()
+        public void TestTotalIncome()
         {
-            Assert.Pass();
+            Manager _mymanager = new Manager();
+            float itotal = _mymanager.TotalIncome();
+            Assert.AreEqual(2860, itotal);
+        }
+
+        [Test]
+        public void TestTotalExpenditure()
+        {
+            Manager _mymanager = new Manager();
+            float etotal = _mymanager.TotalExpenditure();
+            Assert.AreEqual(1660, etotal);
         }
     }
 }
