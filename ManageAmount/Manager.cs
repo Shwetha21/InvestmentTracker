@@ -3,6 +3,7 @@ using InvestmentTracker;
 using System.Linq;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using System.Reflection.Metadata;
 
 namespace ManageAmount
 {
@@ -17,20 +18,20 @@ namespace ManageAmount
         }
 
         // Adding entry to database
-        public void AddIncome(int amount)
+        public void AddIncome(int amount, string source)
         {
             using(var db = new InvestmentdbContext())
             {
-                db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now });
+                db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now ,SourceOfIncome = source });
                 db.SaveChanges();
             }
         }
 
-        public void AddExpenditure(int amount)
+        public void AddExpenditure(int amount, string purpose)
         {
             using (var db = new InvestmentdbContext())
             {
-                db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now });
+                db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now , PurposeOfExpenditure = purpose});
                 db.SaveChanges();
             }
         }
@@ -93,7 +94,8 @@ namespace ManageAmount
             using (var db = new InvestmentdbContext())
             {
                 var queryIncome = db.Incomes.OrderBy(i => i.IncomeId);
-                
+
+               // var fid = (float)id;
                 foreach (var Iid in queryIncome)
                 {
                     if(Iid.IncomeId == id)
@@ -101,6 +103,7 @@ namespace ManageAmount
                         db.Remove(Iid);
                     }
                 }
+                db.SaveChanges();
             }
         }
 
@@ -118,6 +121,7 @@ namespace ManageAmount
                         db.Remove(Eid);
                     }
                 }
+                db.SaveChanges();
             }
         }
 
