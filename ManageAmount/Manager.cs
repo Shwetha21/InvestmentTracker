@@ -30,7 +30,7 @@ namespace ManageAmount
             }
             else
             {
-                throw new Exception(" Invalid input or source of income is empty");
+                throw new Exception("Invalid input or source of income is empty");
             }
         }
 
