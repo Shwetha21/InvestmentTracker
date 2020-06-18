@@ -47,7 +47,7 @@ namespace InvestmenttrackerUnitTest
         public void WhenExpenditureAmountEnteredIsNotValidExceptionThrown()
         {
             Manager _mymanager = new Manager();
-            var ex = Assert.Throws<System.Exception>(() => _mymanager.AddExpenditure(-1, ""));
+            var ex = Assert.Throws<System.Exception>(() => _mymanager.AddExpenditure(0, ""));
             Assert.AreEqual($"Invalid input or pupose of expenditure is empty", ex.Message, "Exception message not correct");
         }
     }

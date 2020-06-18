@@ -97,5 +97,6 @@ namespace InvestmentTrackerWPF
             this.Close();
         }
 
+     
     }
 }

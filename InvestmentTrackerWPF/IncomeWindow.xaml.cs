@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,6 +24,14 @@ namespace InvestmentTrackerWPF
         {
             InitializeComponent();
             PopulateIncomeList();
+            PopulateMonthyIncome();
+        }
+
+        private void PopulateMonthyIncome()
+        {
+            IList collection = (System.Collections.IList)_manager.Monthly_Income();
+            ListBoxMonth.ItemsSource = collection; 
+            
         }
 
         private void PopulateIncomeList()
@@ -44,6 +53,7 @@ namespace InvestmentTrackerWPF
                 _manager.AddIncome(float.Parse(TextIncome.Text), TextSource.Text);
 
                 PopulateIncomeList();
+                PopulateMonthyIncome();
             }
             catch(Exception ex)
             {
@@ -55,12 +65,14 @@ namespace InvestmentTrackerWPF
         {
             _manager.Delete_Income(Int32.Parse(TextId.Text));
             PopulateIncomeList();
+            PopulateMonthyIncome();
         }
 
         private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
         {
             _manager.Update_Income(Int32.Parse(TextId.Text), float.Parse(TextIncome.Text), TextSource.Text);
             PopulateIncomeList();
+            PopulateMonthyIncome();
         }
 
         private void PopulateIncomeFields()

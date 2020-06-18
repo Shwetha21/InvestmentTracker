@@ -4,6 +4,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using System.Reflection.Metadata;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace ManageAmount
 {
@@ -17,10 +19,10 @@ namespace ManageAmount
 
         }
 
-        // Adding entry to database
+        // Adding entry to database with exception handling
         public void AddIncome(float amount, string source)
         {
-            if (amount > 0 && source != "")
+            if (amount > 0 && amount <= 1000000000 && source != "")
             {
                 using (var db = new InvestmentdbContext())
                 {
@@ -36,7 +38,7 @@ namespace ManageAmount
 
         public void AddExpenditure(float amount, string purpose)
         {
-            if (amount > 0 && purpose != "")
+            if (amount > 0 && amount <= 1000000000 && purpose != "")
             {
                 using (var db = new InvestmentdbContext())
                 {
@@ -191,6 +193,28 @@ namespace ManageAmount
                 }
                 db.SaveChanges();
             }
+        }
+
+        //To calculate Total income monthwise
+        public object Monthly_Income()
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                
+                var monthlyIncome = db.Incomes
+                  .Select(x => new
+                  {
+                      x.Day.Month,
+                      x.IncomeReceived
+                  })
+                  .GroupBy(x => x.Month, x => x.IncomeReceived,
+                   (Key, values) => new { Month = Key, IncomeReceived = values.Sum() }).ToList(); 
+                                    
+
+                return monthlyIncome;
+            }
+            
+                
         }
 
     }
