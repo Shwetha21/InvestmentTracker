@@ -55,7 +55,7 @@ namespace InvestmentTrackerWPF
             if (_manager.SelectedExpenditure != null)
             {
                 TextId.Text = _manager.SelectedExpenditure.ExpenditureId.ToString();
-                TextExpenditure.Text = _manager.SelectedExpenditure.ExpenditureId.ToString();
+                TextExpenditure.Text = _manager.SelectedExpenditure.ExpenseAmount.ToString();
                 TextDate.Text = _manager.SelectedExpenditure.Day.ToString();
                 TextPurpose.Text = _manager.SelectedExpenditure.PurposeOfExpenditure.ToString();
             }

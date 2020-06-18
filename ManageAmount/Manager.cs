@@ -54,6 +54,7 @@ namespace ManageAmount
             }
         }
 
+
         public void SetSelectedIncome(object selectedItem)
         {
             SelectedIncome = (Income)selectedItem;
