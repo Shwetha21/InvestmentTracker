@@ -39,9 +39,16 @@ namespace InvestmentTrackerWPF
 
         private void ButtonAddIncome_Click(object sender, RoutedEventArgs e)
         {
-            _manager.AddIncome(float.Parse(TextIncome.Text), TextSource.Text);
-            
-            PopulateIncomeList();
+            try
+            {
+                _manager.AddIncome(float.Parse(TextIncome.Text), TextSource.Text);
+
+                PopulateIncomeList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ButtonDELETE_Click(object sender, RoutedEventArgs e)

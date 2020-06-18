@@ -20,19 +20,33 @@ namespace ManageAmount
         // Adding entry to database
         public void AddIncome(float amount, string source)
         {
-            using(var db = new InvestmentdbContext())
+            if (amount > 0 && source != "")
             {
-                db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now ,SourceOfIncome = source });
-                db.SaveChanges();
+                using (var db = new InvestmentdbContext())
+                {
+                    db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now, SourceOfIncome = source });
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                throw new Exception(" Invalid input or source of income is empty");
             }
         }
 
         public void AddExpenditure(float amount, string purpose)
         {
-            using (var db = new InvestmentdbContext())
+            if (amount > 0 && purpose != "")
             {
-                db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now , PurposeOfExpenditure = purpose});
-                db.SaveChanges();
+                using (var db = new InvestmentdbContext())
+                {
+                    db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now, PurposeOfExpenditure = purpose });
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                throw new Exception("Invalid input or pupose of expenditure is empty");
             }
         }
 
