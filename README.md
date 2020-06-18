@@ -84,7 +84,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 #### Sprint 2 Retrospective
 * Things that went well:
     * Could Demo the project with most of CRUD functionality.
-    * As before planning ahead helped in finishing the decided task on time.
+    * As before, planning ahead helped in finishing the decided task on time.
 
 * Things to Improve:
     * Due to last minute changes in the code resulted in a bug while demo. Avoid it or make sure you evrything is working before demo.

@@ -50,6 +50,12 @@ namespace InvestmentTrackerWPF
             PopulateIncomeList();
         }
 
+        private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
+        {
+            _manager.Update_Income(Int32.Parse(TextId.Text), float.Parse(TextIncome.Text), TextSource.Text);
+            PopulateIncomeList();
+        }
+
         private void PopulateIncomeFields()
         {
             if (_manager.SelectedIncome != null)
@@ -85,6 +91,6 @@ namespace InvestmentTrackerWPF
             this.Close();
         }
 
-      
+        
     }
 }

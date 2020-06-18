@@ -141,5 +141,27 @@ namespace ManageAmount
             }
         }
 
+        //To update the wrong entry made in Income Table
+
+        public void Update_Income (int id , float income, string source)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                var SIncome = db.Incomes.OrderBy(i => i.IncomeId);
+                foreach (var Iid in SIncome)
+                {
+                    if (Iid.IncomeId == id)
+                    {
+                        Iid.IncomeReceived = income;
+                        Iid.SourceOfIncome = source;
+                    }
+                }
+                db.SaveChanges();
+
+
+            }
+
+        }
+
     }
 }
