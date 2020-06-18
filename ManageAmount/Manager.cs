@@ -18,7 +18,7 @@ namespace ManageAmount
         }
 
         // Adding entry to database
-        public void AddIncome(int amount, string source)
+        public void AddIncome(float amount, string source)
         {
             using(var db = new InvestmentdbContext())
             {
@@ -27,7 +27,7 @@ namespace ManageAmount
             }
         }
 
-        public void AddExpenditure(int amount, string purpose)
+        public void AddExpenditure(float amount, string purpose)
         {
             using (var db = new InvestmentdbContext())
             {
@@ -157,10 +157,26 @@ namespace ManageAmount
                     }
                 }
                 db.SaveChanges();
-
-
             }
 
+        }
+
+        //To update the wrong entry made in Expenditure Table
+        public void Update_Expenditure(int id, float expenditure, string purpose)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                var SExpenditure = db.Expenditures.OrderBy(e => e.ExpenditureId);
+                foreach(var Eid in SExpenditure)
+                {
+                    if(Eid.ExpenditureId == id)
+                    {
+                        Eid.ExpenseAmount = expenditure;
+                        Eid.PurposeOfExpenditure = purpose;
+                    }
+                }
+                db.SaveChanges();
+            }
         }
 
     }

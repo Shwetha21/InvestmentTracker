@@ -9,7 +9,7 @@ namespace InvestmentTracker
         public int ExpenditureId { get; set; }
         public DateTime Day { get; set; }
 
-        public int ExpenseAmount { get; set; }
+        public float ExpenseAmount { get; set; }
 
         public string PurposeOfExpenditure { get; set; }
 

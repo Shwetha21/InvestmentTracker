@@ -35,6 +35,7 @@
             <Button x:Name="ExpenditureADD" Grid.Row="4" Grid.Column="1" Background="#FF4B59B4" Content="ADD EXPENDITURE" FontSize="15" Click="ButtonAddExpenditure_Click"/>
             <Button x:Name="TotalExpenditure" Grid.Row="4" Grid.Column="0" Background="#FF99A1D3" Content="TOTAL EXPENDITURE" FontSize="15" Click="ButtonTotal_Click"/>
             <Button x:Name="DELETE" Grid.Row="5" Grid.Column="0" Background="#FFC34556" Content="DELETE" FontSize="15" Click="ButtonDELETE_Click"/>
+            <Button x:Name="UPDATE" Grid.Row="5" Grid.Column="1" Background="#FFEC949F" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click"/>
         </Grid>
     </Grid>
 </Window>

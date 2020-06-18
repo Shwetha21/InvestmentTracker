@@ -39,7 +39,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonAddExpenditure_Click(object sender, RoutedEventArgs e)
         {
-            _manager.AddExpenditure(Int32.Parse(TextExpenditure.Text), TextPurpose.Text);
+            _manager.AddExpenditure(float.Parse(TextExpenditure.Text), TextPurpose.Text);
 
             PopulateExpenditureList();
         }
@@ -47,6 +47,12 @@ namespace InvestmentTrackerWPF
         private void ButtonDELETE_Click(object sender, RoutedEventArgs e)
         {
             _manager.Delete_Expenditure(Int32.Parse(TextId.Text));
+            PopulateExpenditureList();
+        }
+
+        private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
+        {
+            _manager.Update_Expenditure(Int32.Parse(TextId.Text), float.Parse(TextExpenditure.Text), TextPurpose.Text);
             PopulateExpenditureList();
         }
 
@@ -84,6 +90,5 @@ namespace InvestmentTrackerWPF
             this.Close();
         }
 
-     
     }
 }

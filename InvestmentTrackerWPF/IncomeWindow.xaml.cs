@@ -39,7 +39,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonAddIncome_Click(object sender, RoutedEventArgs e)
         {
-            _manager.AddIncome(Int32.Parse(TextIncome.Text), TextSource.Text);
+            _manager.AddIncome(float.Parse(TextIncome.Text), TextSource.Text);
             
             PopulateIncomeList();
         }
