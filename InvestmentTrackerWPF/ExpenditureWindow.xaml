@@ -8,7 +8,7 @@
         Title="ExpenditureWindow" Height="450" Width="700">
     <Grid>
         <Button Content="Back" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,1.906" Width="55" Height="30" Click="Back_Click" Background="#FF8E92DA"/>
-        <ListBox x:Name="ListBoxExpenditure" Margin="0,82,375,0" SelectionChanged="ListBoxExpenditure_SelectionChanged"/>
+        <ListBox x:Name="ListBoxExpenditure" Margin="0,82,375,177" SelectionChanged="ListBoxExpenditure_SelectionChanged"/>
         <TextBox HorizontalAlignment="Left" Margin="82,53,0,0" Text="  History" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.451,0.334" FontWeight="Normal" Background="#FFEEC9C9"/>
         <Grid Margin="330,0,0,0">
             <Grid.RowDefinitions>
@@ -37,5 +37,6 @@
             <Button x:Name="DELETE" Grid.Row="5" Grid.Column="0" Background="#FFC34556" Content="DELETE" FontSize="15" Click="ButtonDELETE_Click"/>
             <Button x:Name="UPDATE" Grid.Row="5" Grid.Column="1" Background="#FFEC949F" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click"/>
         </Grid>
+        <ListBox x:Name="ListBoxMonth" Margin="0,258,375,0"/>
     </Grid>
 </Window>

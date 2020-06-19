@@ -208,14 +208,31 @@ namespace ManageAmount
                       x.IncomeReceived
                   })
                   .GroupBy(x => x.Month, x => x.IncomeReceived,
-                   (Key, values) => new { Month = Key, IncomeReceived = values.Sum() }).ToList(); 
+                   (Key, values) => new { Month = Key, MonthlyIncome = values.Sum() }).ToList(); 
                                     
 
                 return monthlyIncome;
-            }
-            
-                
+            }    
         }
 
+        //To calculate total expenditure monthwise
+
+        public object Monthy_Expenditure()
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                var monthlyExpenditure = db.Expenditures
+                    .Select(y => new
+                    {
+                        y.Day.Month,
+                        y.ExpenseAmount
+                    })
+                    .GroupBy(y => y.Month, y => y.ExpenseAmount,
+                    (Key, values) => new { Month = Key, MonthyExpense = values.Sum() }).ToList();
+
+                return monthlyExpenditure;
+            }
+
+        }
     }
 }

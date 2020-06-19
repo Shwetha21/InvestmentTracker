@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,11 +24,18 @@ namespace InvestmentTrackerWPF
         {
             InitializeComponent();
             PopulateExpenditureList();
+            PopulateMonthyExpenditure();
         }
 
         private void PopulateExpenditureList()
         {
             ListBoxExpenditure.ItemsSource = _manager.DisplayExpenditure();
+        }
+
+        private void PopulateMonthyExpenditure()
+        {
+            IList collection = (System.Collections.IList)_manager.Monthy_Expenditure();
+            ListBoxMonth.ItemsSource = collection;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -44,6 +52,7 @@ namespace InvestmentTrackerWPF
                 _manager.AddExpenditure(float.Parse(TextExpenditure.Text), TextPurpose.Text);
 
                 PopulateExpenditureList();
+                PopulateMonthyExpenditure();
             }
             catch(Exception ex)
             {
@@ -55,12 +64,14 @@ namespace InvestmentTrackerWPF
         {
             _manager.Delete_Expenditure(Int32.Parse(TextId.Text));
             PopulateExpenditureList();
+            PopulateMonthyExpenditure();
         }
 
         private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
         {
             _manager.Update_Expenditure(Int32.Parse(TextId.Text), float.Parse(TextExpenditure.Text), TextPurpose.Text);
             PopulateExpenditureList();
+            PopulateMonthyExpenditure();
         }
 
         private void PopulateExpenditureFields()

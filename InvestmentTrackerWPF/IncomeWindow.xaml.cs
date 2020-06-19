@@ -30,8 +30,7 @@ namespace InvestmentTrackerWPF
         private void PopulateMonthyIncome()
         {
             IList collection = (System.Collections.IList)_manager.Monthly_Income();
-            ListBoxMonth.ItemsSource = collection; 
-            
+            ListBoxMonth.ItemsSource = collection;  
         }
 
         private void PopulateIncomeList()
