@@ -79,7 +79,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 
 * Could Complete All the tasks planned for Sprint2.
 
-* Suggestions made format date, add functionality to calculate monthly expenditure. Which were previouly included in the project backlog.
+* Suggestions made format date, add functionality to calculate monthly expenditure. Which were previously included in the project backlog.
 
 #### Sprint 2 Retrospective
 * Things that went well:
@@ -94,11 +94,50 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 * To add update method in my business layer.
 * Make sure GUI doesnt take in any invalid data.
 * Handle Exceptions.
+* To add monthly income and expenditure.
 
 #### Screenshot of project Board Before and after Sprint 2
 
 ##### Before Sprint 3
 <img src ="Sprint3Start.PNG" width = "3000" />
+
+##### Before Sprint 3
+<img src ="Sprint3End.PNG" width = "3000" />
+
+#### Output of Sprint 3 Review
+
+* List Of Sprint Backlog items that were completed:
+    * Adding Method to calculate Monthy Income and Expenditure.
+    * Adding Update method to correct the wrong entry made.
+    * Exception handling: Making sure invalid input or empty string are not added to database.
+    * Updating README File.
+    * Adding Tests To check the working of monthy income and expenditure methods.
+    * Adding Tests to verify the functioning of exception handling methods.
+    * Made necessary changes in GUI to replicate all the functions involved.
+
+* Could complete the taskes planned for Sprint3.
+
+* Suggestions made to display all the details to be included is a single window.
+
+#### Sprint 3 Retrospective
+* Things that went well:
+    * Could demo the work with all the functionalities.
+    * Completed well ahead of Sprint review, got me time to think about other exceptions.
+
+* Things to Improve:
+    * While doing Exception handling tasks could have thought about other exceptions.
+
+### Sprint 4
+#### Goal: To work on GUI and documentation.
+* To make GUI more user friendly and attractive.
+* To check for more exceptions and handle them.
+
+#### Screenshot of project Board Before and after Sprint 4
+
+##### Before Sprint 3
+<img src ="Sprint4Start.PNG" width = "3000" />
+
+
 
 
 
