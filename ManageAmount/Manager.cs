@@ -228,7 +228,7 @@ namespace ManageAmount
                         y.ExpenseAmount
                     })
                     .GroupBy(y => y.Month, y => y.ExpenseAmount,
-                    (Key, values) => new { Month = Key, MonthyExpense = values.Sum() }).ToList();
+                    (Key, values) => new { Month = Key, MonthlyExpense = values.Sum() }).ToList();
 
                 return monthlyExpenditure;
             }

@@ -1,19 +1,23 @@
 using NUnit.Framework;
 using ManageAmount;
+using System.Collections.Generic;
+using System.Collections;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace InvestmenttrackerUnitTest
 {
     public class InvestmenttrackerUnitTest
     {
-        [SetUp]
+        private Manager _mymanager; 
+        [SetUp] //setup database
         public void Setup()
         {
+            _mymanager = new Manager();
         }
 
         [Test]
         public void TestTotalIncome()
         {
-            Manager _mymanager = new Manager();
             float itotal = _mymanager.TotalIncome();
             Assert.AreEqual(2860, itotal);
         }
@@ -21,7 +25,6 @@ namespace InvestmenttrackerUnitTest
         [Test]
         public void TestTotalExpenditure()
         {
-            Manager _mymanager = new Manager();
             float etotal = _mymanager.TotalExpenditure();
             Assert.AreEqual(1660, etotal);
         }
@@ -30,7 +33,6 @@ namespace InvestmenttrackerUnitTest
 
         public void TestBalance()
         {
-            Manager _mymanager = new Manager();
             float mybalance = _mymanager.BalanceCheck();
             Assert.AreEqual(1200, mybalance);
         }
@@ -38,7 +40,6 @@ namespace InvestmenttrackerUnitTest
         [Test]
         public void WhenIncomeAmountEnteredIsNotValidExceptionThrown()
         {
-            Manager _mymanager = new Manager();
             var ex = Assert.Throws<System.Exception>(() => _mymanager.AddIncome(-1, ""));
             Assert.AreEqual($"Invalid input or source of income is empty", ex.Message, "Exception message not correct");
         }
@@ -46,9 +47,28 @@ namespace InvestmenttrackerUnitTest
         [Test]
         public void WhenExpenditureAmountEnteredIsNotValidExceptionThrown()
         {
-            Manager _mymanager = new Manager();
             var ex = Assert.Throws<System.Exception>(() => _mymanager.AddExpenditure(0, ""));
             Assert.AreEqual($"Invalid input or pupose of expenditure is empty", ex.Message, "Exception message not correct");
         }
+
+
+        [Test]
+        public void TestMonthlyExpenditure()
+        {
+            IList collection = (System.Collections.IList)_mymanager.Monthy_Expenditure();
+            var output = collection[0].ToString();
+            Assert.AreEqual("{ Month = 6, MonthlyExpense = 435.9 }", output);
+        }
+
+        [Test]
+        public void TestMonthlyIncome()
+        {
+            IList collection = (System.Collections.IList)_mymanager.Monthly_Income();
+            var output = collection[0].ToString();
+            Assert.AreEqual("{ Month = 3, MonthlyIncome = 2300 }", output);
+        }
+
+
+
     }
 }
