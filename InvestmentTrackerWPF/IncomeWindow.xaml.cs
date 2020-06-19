@@ -25,6 +25,13 @@ namespace InvestmentTrackerWPF
             InitializeComponent();
             PopulateIncomeList();
             PopulateMonthyIncome();
+            PopulateSIncome();
+        }
+
+        private void PopulateSIncome()
+        {
+            string[] SOfIncome = _manager.DisplaysourceIncome();
+            SIncome.ItemsSource = SOfIncome;
         }
 
         private void PopulateMonthyIncome()
@@ -49,7 +56,7 @@ namespace InvestmentTrackerWPF
         {
             try
             {
-                _manager.AddIncome(float.Parse(TextIncome.Text), TextSource.Text);
+                _manager.AddIncome(float.Parse(TextIncome.Text), SIncome.Text);
 
                 PopulateIncomeList();
                 PopulateMonthyIncome();
@@ -69,7 +76,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
         {
-            _manager.Update_Income(Int32.Parse(TextId.Text), float.Parse(TextIncome.Text), TextSource.Text);
+            _manager.Update_Income(Int32.Parse(TextId.Text), float.Parse(TextIncome.Text), SIncome.Text);
             PopulateIncomeList();
             PopulateMonthyIncome();
         }
@@ -81,14 +88,14 @@ namespace InvestmentTrackerWPF
                 TextId.Text = _manager.SelectedIncome.IncomeId.ToString();
                 TextIncome.Text = _manager.SelectedIncome.IncomeReceived.ToString();
                 TextDate.Text = _manager.SelectedIncome.Day.ToString();
-                TextSource.Text = _manager.SelectedIncome.SourceOfIncome.ToString();
+                SIncome.Text = _manager.SelectedIncome.SourceOfIncome.ToString();
             }
             else
             {
                 TextId.Text = null;
                 TextIncome.Text = null;
                 TextDate.Text = null;
-                TextSource.Text = null;
+                SIncome.Text = null;
             }
         }
 

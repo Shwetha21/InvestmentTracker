@@ -25,6 +25,13 @@ namespace InvestmentTrackerWPF
             InitializeComponent();
             PopulateExpenditureList();
             PopulateMonthyExpenditure();
+            PopulateEpenditure();
+        }
+
+        private void PopulateEpenditure()
+        {
+            string[] POfExpenditure = _manager.DisplayPurposeExpenditure();
+            PExpenditure.ItemsSource = POfExpenditure;
         }
 
         private void PopulateExpenditureList()
@@ -49,7 +56,7 @@ namespace InvestmentTrackerWPF
         {
             try
             {
-                _manager.AddExpenditure(float.Parse(TextExpenditure.Text), TextPurpose.Text);
+                _manager.AddExpenditure(float.Parse(TextExpenditure.Text), PExpenditure.Text);
 
                 PopulateExpenditureList();
                 PopulateMonthyExpenditure();
@@ -69,7 +76,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
         {
-            _manager.Update_Expenditure(Int32.Parse(TextId.Text), float.Parse(TextExpenditure.Text), TextPurpose.Text);
+            _manager.Update_Expenditure(Int32.Parse(TextId.Text), float.Parse(TextExpenditure.Text), PExpenditure.Text);
             PopulateExpenditureList();
             PopulateMonthyExpenditure();
         }
@@ -81,14 +88,14 @@ namespace InvestmentTrackerWPF
                 TextId.Text = _manager.SelectedExpenditure.ExpenditureId.ToString();
                 TextExpenditure.Text = _manager.SelectedExpenditure.ExpenseAmount.ToString();
                 TextDate.Text = _manager.SelectedExpenditure.Day.ToString();
-                TextPurpose.Text = _manager.SelectedExpenditure.PurposeOfExpenditure.ToString();
+                PExpenditure.Text = _manager.SelectedExpenditure.PurposeOfExpenditure.ToString();
             }
             else
             {
                 TextId.Text = null;
                 TextExpenditure.Text = null;
                 TextDate.Text = null;
-                TextPurpose.Text = null;
+                PExpenditure.Text = null;
             }
         }
 

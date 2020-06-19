@@ -6,6 +6,7 @@ using System.Xml.Schema;
 using System.Reflection.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
+using InvestmentTracker.Migrations;
 
 namespace ManageAmount
 {
@@ -14,9 +15,25 @@ namespace ManageAmount
         public Income SelectedIncome { get; set; }
         public Expenditure SelectedExpenditure { get; set; }
 
+        public string[] IncomeSource { get; set; }
+
+        public string[] PurposeExpenditure { get; set; }
+
         public Manager()
         {
 
+        }
+
+        public string[] DisplaysourceIncome()
+        {
+            IncomeSource = new string[] { "Salary", "Gift","Cash Back","Others"};
+            return IncomeSource;
+        }
+
+        public string[] DisplayPurposeExpenditure()
+        {
+            PurposeExpenditure = new string[] { "Groceries", "Car Loan", "Home Loan","Rent", "Bills","Other" };
+            return PurposeExpenditure;
         }
 
         // Adding entry to database with exception handling
