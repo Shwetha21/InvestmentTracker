@@ -1,51 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="InvestmentTrackerWPF.ExpenditureWindow">
-    <Position X="10" Y="6.5" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAABAAAAAAQAACAEIAAEIAAAIAAABAAA=</HashCode>
-      <FileName>ExpenditureWindow.xaml.cs</FileName>
-    </TypeIdentifier>
+  <Class Name="ManageAmount.Manager">
+    <Position X="4.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
     <ShowAsAssociation>
-      <Field Name="_manager" />
+      <Property Name="SelectedExpenditure" />
+      <Property Name="SelectedIncome" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="InvestmentTrackerWPF.Income">
-    <Position X="3.5" Y="6.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AABAAAAAAEAAAEAAQAAAAQAAAAEAAAAKAAAYAAAAAAA=</HashCode>
-      <FileName>IncomeWindow.xaml.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_manager" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="InvestmentTrackerWPF.MainWindow">
-    <Position X="0.5" Y="7.5" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAEAAAAAAQAAAAAAAIAAAAAAAAAAAAA=</HashCode>
-      <FileName>Main.xaml.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_manager" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="InvestmentTrackerWPF.TotalExpenditure">
-    <Position X="8" Y="7.75" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAIAAAAQAAAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>TotalExpenditure.xaml.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_manager" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="InvestmentTrackerWPF.TotalIncome">
-    <Position X="5.75" Y="7.75" Width="2" />
+    <Position X="5.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAQAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>TotalIncome.xaml.cs</FileName>
@@ -55,24 +19,95 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ManageAmount.Manager">
-    <Position X="3.75" Y="1.5" Width="3" />
-    <TypeIdentifier />
+  <Class Name="InvestmentTrackerWPF.TotalExpenditure">
+    <Position X="3.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAQAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>TotalExpenditure.xaml.cs</FileName>
+    </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="SelectedExpenditure" />
-      <Property Name="SelectedIncome" />
+      <Field Name="_manager" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="InvestmentTrackerWPF.MainWindow">
+    <Position X="7.25" Y="7" Width="1.5" />
+    <AssociationLine Name="_manager" Type="ManageAmount.Manager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="7" />
+        <Point X="7.5" Y="5.892" />
+        <Point X="6.938" Y="5.892" />
+        <Point X="6.938" Y="5.517" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAEAAAAAAQAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Main.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_manager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="InvestmentTrackerWPF.Income">
+    <Position X="9.5" Y="5.75" Width="2" />
+    <AssociationLine Name="_manager" Type="ManageAmount.Manager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.5" Y="6.284" />
+        <Point X="9.125" Y="6.284" />
+        <Point X="9.125" Y="4.812" />
+        <Point X="7.25" Y="4.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAEAAAEAAQAAAAQAABAEAAAAKAAAYAAAAAAA=</HashCode>
+      <FileName>IncomeWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_manager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="InvestmentTrackerWPF.ExpenditureWindow">
+    <Position X="0.5" Y="5.5" Width="2.25" />
+    <AssociationLine Name="_manager" Type="ManageAmount.Manager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.75" Y="6.165" />
+        <Point X="3.125" Y="6.165" />
+        <Point X="3.125" Y="5.25" />
+        <Point X="4.5" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAABAAAAABQAACAEIAAEIAAAIAAABAAA=</HashCode>
+      <FileName>ExpenditureWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_manager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="InvestmentTrackerWPF.BalanceCheckWindow">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAQAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>BalanceCheckWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_manager" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="InvestmentTracker.Income">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="9" Y="0.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="InvestmentTracker.Expenditure">
-    <Position X="10" Y="0.5" Width="1.5" />
+    <Position X="0.75" Y="2.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="InvestmentTracker.InvestmentdbContext">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="2" />
     <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
