@@ -15,7 +15,7 @@
         </Grid.Background>
 
 
-        <TextBox HorizontalAlignment="Center" Margin="0,91,0,0" Text=" Money Care" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Height="46" FontFamily="Harrington" Background="#FFBCC14B"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,91,0,0" Text=" My Money" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Height="46" FontFamily="Harrington" Background="#FFBCC14B"/>
 
         <Button HorizontalAlignment="Left" Margin="20,290,0,0" VerticalAlignment="Top" Width="157" Height="107" Click="Expenditure_Click">
             <StackPanel Width="157" Height="107">

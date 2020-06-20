@@ -39,17 +39,18 @@ namespace ManageAmount
         // Adding entry to database with exception handling
         public void AddIncome(float amount, string source)
         {
-            if (amount > 0 && amount <= 1000000000 && source != "")
+            if (amount == 0 || source == "")
+            {
+                throw new Exception("Invalid input or source of income is empty");
+            }
+            else
             {
                 using (var db = new InvestmentdbContext())
                 {
                     db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now, SourceOfIncome = source });
                     db.SaveChanges();
                 }
-            }
-            else
-            {
-                throw new Exception("Invalid input or source of income is empty");
+                
             }
         }
 

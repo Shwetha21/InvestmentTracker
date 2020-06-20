@@ -54,6 +54,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonAddIncome_Click(object sender, RoutedEventArgs e)
         {
+
             try
             {
                 _manager.AddIncome(float.Parse(TextIncome.Text), SIncome.Text);
@@ -61,24 +62,40 @@ namespace InvestmentTrackerWPF
                 PopulateIncomeList();
                 PopulateMonthyIncome();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+
         }
 
         private void ButtonDELETE_Click(object sender, RoutedEventArgs e)
         {
-            _manager.Delete_Income(Int32.Parse(TextId.Text));
-            PopulateIncomeList();
-            PopulateMonthyIncome();
+            if (_manager.SelectedIncome != null)
+            {
+                _manager.Delete_Income(Int32.Parse(TextId.Text));
+                PopulateIncomeList();
+                PopulateMonthyIncome();
+            }
+            else
+            {
+                MessageBox.Show("Select entry to Delete");
+            }
         }
 
         private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
         {
-            _manager.Update_Income(Int32.Parse(TextId.Text), float.Parse(TextIncome.Text), SIncome.Text);
-            PopulateIncomeList();
-            PopulateMonthyIncome();
+            if (_manager.SelectedIncome != null)
+            {
+                _manager.Update_Income(Int32.Parse(TextId.Text), float.Parse(TextIncome.Text), SIncome.Text);
+                PopulateIncomeList();
+                PopulateMonthyIncome();
+            }
+            else
+            {
+                MessageBox.Show("Select entry to Update");
+            }
         }
 
         private void PopulateIncomeFields()
