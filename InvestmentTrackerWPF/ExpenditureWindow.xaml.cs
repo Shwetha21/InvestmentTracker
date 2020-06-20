@@ -69,16 +69,30 @@ namespace InvestmentTrackerWPF
 
         private void ButtonDELETE_Click(object sender, RoutedEventArgs e)
         {
-            _manager.Delete_Expenditure(Int32.Parse(TextId.Text));
-            PopulateExpenditureList();
-            PopulateMonthyExpenditure();
+            if (_manager.SelectedExpenditure != null)
+            {
+                _manager.Delete_Expenditure(Int32.Parse(TextId.Text));
+                PopulateExpenditureList();
+                PopulateMonthyExpenditure();
+            }
+            else
+            {
+                MessageBox.Show("Select entry to Delete");
+            }
         }
 
         private void ButtonUPDATE_Click(object sender, RoutedEventArgs e)
         {
-            _manager.Update_Expenditure(Int32.Parse(TextId.Text), float.Parse(TextExpenditure.Text), PExpenditure.Text);
-            PopulateExpenditureList();
-            PopulateMonthyExpenditure();
+            if (_manager.SelectedExpenditure != null)
+            {
+                _manager.Update_Expenditure(Int32.Parse(TextId.Text), float.Parse(TextExpenditure.Text), PExpenditure.Text);
+                PopulateExpenditureList();
+                PopulateMonthyExpenditure();
+            }
+            else
+            {
+                MessageBox.Show("Select entry to Update");
+            }
         }
 
         private void PopulateExpenditureFields()

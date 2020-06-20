@@ -23,7 +23,7 @@ namespace ManageAmount
         {
 
         }
-
+        // To give options to the user on categories to select.
         public string[] DisplaysourceIncome()
         {
             IncomeSource = new string[] { "Salary", "Gift","Cash Back","Others"};
@@ -39,7 +39,7 @@ namespace ManageAmount
         // Adding entry to database with exception handling
         public void AddIncome(float amount, string source)
         {
-            if (amount == 0 || source == "")
+            if (amount <= 0 || source == "" )
             {
                 throw new Exception("Invalid input or source of income is empty");
             }
@@ -56,17 +56,18 @@ namespace ManageAmount
 
         public void AddExpenditure(float amount, string purpose)
         {
-            if (amount > 0 && amount <= 1000000000 && purpose != "")
+            if (amount <= 0 || purpose == "")
+            {
+                throw new Exception("Invalid input or pupose of expenditure is empty");
+            }
+            else
             {
                 using (var db = new InvestmentdbContext())
                 {
                     db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now, PurposeOfExpenditure = purpose });
                     db.SaveChanges();
                 }
-            }
-            else
-            {
-                throw new Exception("Invalid input or pupose of expenditure is empty");
+                
             }
         }
 

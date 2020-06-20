@@ -41,7 +41,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="TotalIncome" Grid.Row="4" Grid.Column="0" Content="TOTAL INCOME" FontSize="15" Click="ButtonTotal_Click">
+            <Button x:Name="TotalIncome" Grid.Row="5" Grid.Column="1" Content="TOTAL INCOME" FontSize="15" Click="ButtonTotal_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -57,7 +57,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="UPDATE" Grid.Row="5" Grid.Column="1" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click">
+            <Button x:Name="UPDATE" Grid.Row="4" Grid.Column="0" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
