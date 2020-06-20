@@ -7,10 +7,44 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
     <Grid>
-        <TextBox HorizontalAlignment="Center" Margin="0,91,0,0" Text="   Welcome" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Height="46"/>
-        <Button Content="INCOME" HorizontalAlignment="Center" Margin="0,179,0,0" VerticalAlignment="Top" Width="115" Height="48" Click="Income_Click"/>
-        <Button Content="EXPENDITURE" HorizontalAlignment="Center" Margin="0,227,0,0" VerticalAlignment="Top" Width="115" Height="48" Click="Expenditure_Click"/>
-        <Button Content="CHECK BALANCE" HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="115" Height="48" Click="Balance_Click"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF5D7BCB" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+        <TextBox HorizontalAlignment="Center" Margin="0,91,0,0" Text=" Money Care" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Height="46" FontFamily="Harrington" Background="#FFBCC14B"/>
+
+        <Button HorizontalAlignment="Left" Margin="20,290,0,0" VerticalAlignment="Top" Width="157" Height="107" Click="Expenditure_Click">
+            <StackPanel Width="157" Height="107">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/Mainpage.jpg"/>
+                </StackPanel.Background>
+                <Image Source="IncomeIcon.png" Height="69" Width="64"/>
+                <Label Content="Manage Expenditure" Background="White" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Normal"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="242,290,0,0" VerticalAlignment="Top" Width="140" Height="107" Click="Balance_Click">
+            <StackPanel Width="140" Height="107">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/Mainpage.jpg"/>
+                </StackPanel.Background>
+                <Image Source="images.png" Height="64" Width="64"/>
+                <Label Content="Check Balance" Background="White" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Normal"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center"
+        Margin="10" Click="Income_Click" >
+            <StackPanel Width="110" Height="112">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/Mainpage.jpg"/>
+                </StackPanel.Background>
+                <Image Source="IncomeIcon.png" Height="66" Width="64"/>
+                <Label Content="Manage Income" Background="White" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Normal"/>
+            </StackPanel>
+        </Button>
 
 
     </Grid>

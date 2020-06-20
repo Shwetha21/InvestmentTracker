@@ -7,7 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Balance.png" />
+    <None Remove="images.png" />
+    <None Remove="IncomeIcon.png" />
+    <None Remove="Mainpage.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ManageAmount\ManageAmount.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Balance.png" />
+    <Resource Include="images.png" />
+    <Resource Include="IncomeIcon.png" />
+    <Resource Include="Mainpage.jpg" />
   </ItemGroup>
 
 </Project>

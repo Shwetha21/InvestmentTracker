@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:InvestmentTrackerWPF"
         mc:Ignorable="d"
         Title="ExpenditureWindow" Height="450" Width="700">
-    <Grid>
+    <Grid Background="#FF333364">
+
         <Button Content="Back" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,1.906" Width="55" Height="30" Click="Back_Click" Background="#FF8E92DA"/>
-        <ListBox x:Name="ListBoxExpenditure" Margin="0,82,375,177" SelectionChanged="ListBoxExpenditure_SelectionChanged"/>
-        <TextBox HorizontalAlignment="Left" Margin="82,53,0,0" Text="  History" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.451,0.334" FontWeight="Normal" Background="#FFEEC9C9"/>
+        <ListBox x:Name="ListBoxExpenditure" Margin="0,82,375,184" SelectionChanged="ListBoxExpenditure_SelectionChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="120,53,0,0" Text="  History" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.451,0.334" FontWeight="Normal" Background="#FFEEC9C9"/>
         <Grid Margin="330,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -24,19 +25,49 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="LabelId" Grid.Row="0" Grid.Column="0" Background="Bisque" >ExpenditureId</Label>
-            <Label x:Name="LabelDate" Grid.Row="1" Grid.Column="0" Background="Bisque">Date</Label>
-            <Label x:Name="LabelExpenditure" Grid.Row="2" Grid.Column="0" Background="Bisque">Expenditure</Label>
-            <Label x:Name="LabelPurpose" Grid.Row="3" Grid.Column="0" Background="Bisque">Purpose Of Expenditure</Label>
+            <Label x:Name="LabelId" Grid.Row="0" Grid.Column="0" Background="Beige" FontWeight="Bold" >ExpenditureId</Label>
+            <Label x:Name="LabelDate" Grid.Row="1" Grid.Column="0" Background="Beige" FontWeight="Bold">Date</Label>
+            <Label x:Name="LabelExpenditure" Grid.Row="2" Grid.Column="0" Background="Beige" FontWeight="Bold">Expenditure</Label>
+            <Label x:Name="LabelPurpose" Grid.Row="3" Grid.Column="0" Background="Beige" FontWeight="Bold">Purpose Of Expenditure</Label>
             <TextBox x:Name="TextId" Grid.Row="0" Grid.Column="1" Background="#FFF2F7F2" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
             <TextBox x:Name="TextDate" Grid.Row="1" Grid.Column="1" Background="#FFF7FBF7" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
             <TextBox x:Name="TextExpenditure" Grid.Row="2" Grid.Column="1" Background="#FFF1F3F1"></TextBox>
             <ComboBox x:Name="PExpenditure" IsEditable="True" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="185" Height="72"/>
-            <Button x:Name="ExpenditureADD" Grid.Row="4" Grid.Column="1" Background="#FF4B59B4" Content="ADD EXPENDITURE" FontSize="15" Click="ButtonAddExpenditure_Click"/>
-            <Button x:Name="TotalExpenditure" Grid.Row="4" Grid.Column="0" Background="#FF99A1D3" Content="TOTAL EXPENDITURE" FontSize="15" Click="ButtonTotal_Click"/>
-            <Button x:Name="DELETE" Grid.Row="5" Grid.Column="0" Background="#FFC34556" Content="DELETE" FontSize="15" Click="ButtonDELETE_Click"/>
-            <Button x:Name="UPDATE" Grid.Row="5" Grid.Column="1" Background="#FFEC949F" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click"/>
+            <Button x:Name="ExpenditureADD" Grid.Row="4" Grid.Column="1" Content="ADD EXPENDITURE" FontSize="15" Click="ButtonAddExpenditure_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="TotalExpenditure" Grid.Row="4" Grid.Column="0" Content="TOTAL EXPENDITURE" FontSize="15" Click="ButtonTotal_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="DELETE" Grid.Row="5" Grid.Column="0" Content="DELETE" FontSize="15" Click="ButtonDELETE_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="UPDATE" Grid.Row="5" Grid.Column="1" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
-        <ListBox x:Name="ListBoxMonth" Margin="0,258,375,0"/>
+        <ListBox x:Name="ListBoxMonth" Margin="0,284,375,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="70,255,0,0" Text="Monthy Expenditure" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" RenderTransformOrigin="0.451,0.334" FontWeight="Normal" Background="#FFEEC9C9"/>
+
     </Grid>
 </Window>
