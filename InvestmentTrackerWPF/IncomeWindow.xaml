@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InvestmentTrackerWPF"
         mc:Ignorable="d"
-        Title="IncomeW" Height="450" Width="700">
+        Title="Income" Height="450" Width="700">
     <Grid Background="#FF333364">
 
         <Button Content="Back" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,1.906" Width="55" Height="30" Click="Back_Click" Background="#FF4C62B0"/>

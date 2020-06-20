@@ -128,9 +128,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonTotal_Click(object sender, RoutedEventArgs e)
         {
-            TotalIncome tIncome = new TotalIncome();
-            tIncome.Show();
-            this.Close();
+            MessageBox.Show($"£{_manager.TotalIncome()}");
         }
 
         

@@ -110,9 +110,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonTotal_Click(object sender, RoutedEventArgs e)
         {
-            TotalExpenditure texpenditure = new TotalExpenditure();
-            texpenditure.Show();
-            this.Close();
+            MessageBox.Show($"£{_manager.TotalExpenditure()}");
         }
 
      
