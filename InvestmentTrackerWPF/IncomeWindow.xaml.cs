@@ -54,17 +54,27 @@ namespace InvestmentTrackerWPF
 
         private void ButtonAddIncome_Click(object sender, RoutedEventArgs e)
         {
-
-            try
+            if (TextIncome.Text == "")
             {
-                _manager.AddIncome(float.Parse(TextIncome.Text), SIncome.Text);
-
-                PopulateIncomeList();
-                PopulateMonthyIncome();
+                MessageBox.Show("Enter Input");
             }
-            catch (Exception ex)
+            else if (SIncome.Text == "")
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Source of Income can not be empty");
+            }
+            else
+            {
+                try
+                {
+                    _manager.AddIncome(float.Parse(TextIncome.Text), SIncome.Text);
+
+                    PopulateIncomeList();
+                    PopulateMonthyIncome();
+                }
+                catch 
+                {
+                    MessageBox.Show("Invalid input");
+                }
             }
 
 
@@ -128,7 +138,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonTotal_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"£{_manager.TotalIncome()}");
+            MessageBox.Show($" Total Income = £{_manager.TotalIncome()}");
         }
 
         

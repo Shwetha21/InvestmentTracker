@@ -54,16 +54,27 @@ namespace InvestmentTrackerWPF
 
         private void ButtonAddExpenditure_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (TextExpenditure.Text == "")
             {
-                _manager.AddExpenditure(float.Parse(TextExpenditure.Text), PExpenditure.Text);
-
-                PopulateExpenditureList();
-                PopulateMonthyExpenditure();
+                MessageBox.Show("Enter Input");
             }
-            catch(Exception ex)
+            else if (PExpenditure.Text == "")
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Purpose of Expenditure can not be empty");
+            }
+            else
+            {
+                try
+                {
+                    _manager.AddExpenditure(float.Parse(TextExpenditure.Text), PExpenditure.Text);
+
+                    PopulateExpenditureList();
+                    PopulateMonthyExpenditure();
+                }
+                catch 
+                {
+                    MessageBox.Show("Invalid Input");
+                }
             }
         }
 
@@ -124,7 +135,7 @@ namespace InvestmentTrackerWPF
 
         private void ButtonTotal_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"£{_manager.TotalExpenditure()}");
+            MessageBox.Show($"Total Expenditure = £{_manager.TotalExpenditure()}");
         }
 
      

@@ -39,9 +39,9 @@ namespace ManageAmount
         // Adding entry to database with exception handling
         public void AddIncome(float amount, string source)
         {
-            if (amount <= 0 || source == "" )
+            if (amount <= 0 )
             {
-                throw new Exception("Invalid input or source of income is empty");
+                throw new Exception("Invalid input");
             }
             else
             {
@@ -58,7 +58,7 @@ namespace ManageAmount
         {
             if (amount <= 0 || purpose == "")
             {
-                throw new Exception("Invalid input or pupose of expenditure is empty");
+                throw new Exception("Invalid input");
             }
             else
             {

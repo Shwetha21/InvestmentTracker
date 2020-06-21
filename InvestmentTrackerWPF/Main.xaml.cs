@@ -44,7 +44,7 @@ namespace InvestmentTrackerWPF
 
         private void Balance_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"£{_manager.BalanceCheck()}");
+            MessageBox.Show($"Balance = £{_manager.BalanceCheck()}");
         }
     }
 }

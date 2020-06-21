@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InvestmentTrackerWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="MainWindow" Height="450" Width="700">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -17,8 +17,8 @@
 
         <TextBox HorizontalAlignment="Center" Margin="0,91,0,0" Text=" My Money" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" Height="46" FontFamily="Harrington" Background="#FFBCC14B"/>
 
-        <Button HorizontalAlignment="Left" Margin="20,290,0,0" VerticalAlignment="Top" Width="157" Height="107" Click="Expenditure_Click">
-            <StackPanel Width="157" Height="107">
+        <Button HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="160" Height="130" Click="Expenditure_Click">
+            <StackPanel Width="160" Height="130">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="/Mainpage.jpg"/>
                 </StackPanel.Background>
@@ -26,8 +26,8 @@
                 <Label Content="Manage Expenditure" Background="White" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Normal"/>
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="242,290,0,0" VerticalAlignment="Top" Width="140" Height="107" Click="Balance_Click">
-            <StackPanel Width="140" Height="107">
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="160" Height="130" Click="Balance_Click">
+            <StackPanel Width="160" Height="130">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="/Mainpage.jpg"/>
                 </StackPanel.Background>
@@ -35,9 +35,8 @@
                 <Label Content="Check Balance" Background="White" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Normal"/>
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center"
-        Margin="10" Click="Income_Click" >
-            <StackPanel Width="110" Height="112">
+        <Button HorizontalAlignment="Left" VerticalAlignment="Bottom"  Click="Income_Click" Width="160" Height="130" >
+            <StackPanel Width="160" Height="130" Orientation="Vertical">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="/Mainpage.jpg"/>
                 </StackPanel.Background>
