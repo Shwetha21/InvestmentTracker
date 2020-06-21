@@ -3,7 +3,7 @@
 The 3 layer project helps you to store your income and expenditure and can be viewed anytime we want.
 
 ## Project Goal
-*To Track household expenditure 
+* To Track household expenditure 
 
 ## Definition Of Done
 - [ ] Track my Income and my Expenditure.
@@ -26,7 +26,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 
 #### Output Sprint 1 Review
 
-* List Of Sprint Backlog items that were completed: 
+* List of Sprint Backlog items that were completed: 
     * Console App created to start the Project.
     * Investment class and expenditure class Added.
     * Class Library created to add the business layer.
@@ -68,7 +68,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 
 #### Output of Sprint 2 Review
 
-* List Of Sprint Backlog items that were completed: 
+* List of Sprint Backlog items that were completed: 
     * Adding Source column in Income table and purpose column in my expenditure Table.
     * Day of adding entry to the database is implicitly added.
     * To calculate the Total Income and Total expenditure so far.
@@ -101,12 +101,12 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 ##### Before Sprint 3
 <img src ="Sprint3Start.PNG" width = "3000" />
 
-##### Before Sprint 3
+##### After Sprint 3
 <img src ="Sprint3End.PNG" width = "3000" />
 
 #### Output of Sprint 3 Review
 
-* List Of Sprint Backlog items that were completed:
+* List of Sprint Backlog items that were completed:
     * Adding Method to calculate Monthy Income and Expenditure.
     * Adding Update method to correct the wrong entry made.
     * Exception handling: Making sure invalid input or empty string are not added to database.
@@ -115,7 +115,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
     * Adding Tests to verify the functioning of exception handling methods.
     * Made necessary changes in GUI to replicate all the functions involved.
 
-* Could complete the taskes planned for Sprint3.
+* Could complete the tasks planned for Sprint3.
 
 * Suggestions made to display all the details to be included is a single window.
 
@@ -131,11 +131,70 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 #### Goal: To work on GUI and documentation.
 * To make GUI more user friendly and attractive.
 * To check for more exceptions and handle them.
+* Add Categories for source of Income and Purpose of Expenditure.
 
 #### Screenshot of project Board Before and after Sprint 4
 
-##### Before Sprint 3
+##### Before Sprint 4
 <img src ="Sprint4Start.PNG" width = "3000" />
+
+##### After Sprint 4
+<img src ="Sprint4Start.PNG" width = "3000" />
+
+#### Output of Sprint 4 Review
+
+* List of Sprint Backlog items that were completed:
+    * Updating README file after Sprint 3.
+    * Adding Class diagram.
+    * To add Categoty of Source of Income and Purpose of Expenditure.
+    * To Check for more Exceptions Handling.
+    * To make GUI attractive by adding images and deleting extra windows that were not necessary.
+ 
+* List of Sprint Backlog items that could not be completed.
+    * Preparing Slides Dor Presentation.
+
+#### Sprint 4 Retrospective
+* Things that went well:
+    * Could Complete the tasks as planned except one.
+
+* Things to Improve:
+    * Could have given more time to Design part of GUI.
+    * Could not give enough time to project as planned for Sprint 4.
+
+### Project Retrospective:
+
+#### What Did I learn?
+
+* How to Update the database once created using Entity Framework migrations.
+* Different features present in WPF:
+    * Message Box
+    * Using different window.
+    * How to add icon to  the button.
+    * How to handle exceptions within WPF.
+* Writing Complex LINQ queries using Groupby and sum.
+* Usage of GitHub, writing user stories, Usage of Kanban Board, Project planning and execution process.
+* Using C# Programming language to create an application.
+* Writing documents using *Markdown*.
+
+#### What could I do differenthy next time?
+
+* WPF more atrractive and user friendly.
+* Use different pages instead of Windows in WPF to display fifferent contents.
+* Would have written more classes and linking them. Ex Expenditure class, Income class , People class, Savings class and relate each othre using foreign key.
+* Once this was done it would have been easier to use OOPs concepts and SOLID principles.
+
+#### What could I do next?
+
+* Create an other class my name People and link them to Expenditure and Income class.
+* Using that to relate differents peoples income and expenditure and compare, calculate total household eependiture and add methods to calculate who borrowed from whom.
+
+### Screenshot of Class Diagram:
+<img src ="ClassDiagram.PNG" width = "3000" />
+
+### Screenshot of after completion of the project:
+<img src ="Sprint4Start.PNG" width = "3000" />
+    
+   
 
 
 
