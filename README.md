@@ -12,7 +12,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 
 ### Sprint 1
 #### Goal: To create 3Layer project with minimum functionality
-* Create a database using Model first entity framework approach.
+* Create a database using **Model first entity** framework approach.
 * To create a business layer to act as inteface between database and GUI.
 * To create a WPF project to add a GUI layer.
 
@@ -52,7 +52,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
     * Commit to GitHub for each user story. 
 
 ### Sprint 2
-#### Goal: To Add Source column for Income Table and purpose column for Expenditure table.
+#### Goal: To Add Source column for Income Table and purpose column for Expenditure table and to calculate Total Income and Expenditure.
 * To add Source column in Income Table and Purpose of expenditure in Expenditure table.
 * To add delete option in GUI.
 * To calculate Total Income and Total expenditure. 
@@ -79,7 +79,7 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 
 * Could Complete All the tasks planned for Sprint2.
 
-* Suggestions made format date, add functionality to calculate monthly expenditure. Which were previously included in the project backlog.
+* Suggestions made format date, add functionality to calculate monthly expenditure, Which were previously included in the project backlog.
 
 #### Sprint 2 Retrospective
 * Things that went well:
@@ -87,16 +87,16 @@ The 3 layer project helps you to store your income and expenditure and can be vi
     * As before, planning ahead helped in finishing the decided task on time.
 
 * Things to Improve:
-    * Due to last minute changes in the code resulted in a bug while demo. Avoid it or make sure you evrything is working before demo.
+    * Due to last minute changes in the code resulted in a bug while demo. Avoid it or make sure everything is working before demo.
 
 ### Sprint 3
-#### Goal: To add functionality to update the wrong entry made and handle exceptions.
-* To add update method in my business layer.
+#### Goal: To add functionality to update the wrong entry made and handle exceptions and claculate monthly income and Expenditure.
+* To add update method in business layer.
 * Make sure GUI doesnt take in any invalid data.
 * Handle Exceptions.
 * To add monthly income and expenditure.
 
-#### Screenshot of project Board Before and after Sprint 2
+#### Screenshot of project Board Before and after Sprint 3
 
 ##### Before Sprint 3
 <img src ="Sprint3Start.PNG" width = "3000" />
@@ -125,10 +125,10 @@ The 3 layer project helps you to store your income and expenditure and can be vi
     * Completed well ahead of Sprint review, got me time to think about other exceptions.
 
 * Things to Improve:
-    * While doing Exception handling tasks could have thought about other exceptions.
+    * While doing Exception handling could have thought about other exceptions.
 
 ### Sprint 4
-#### Goal: To work on GUI and documentation.
+#### Goal: To work on GUI and documentation and add categories.
 * To make GUI more user friendly and attractive.
 * To check for more exceptions and handle them.
 * Add Categories for source of Income and Purpose of Expenditure.
@@ -139,19 +139,19 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 <img src ="Sprint4Start.PNG" width = "3000" />
 
 ##### After Sprint 4
-<img src ="Sprint4Start.PNG" width = "3000" />
+<img src ="Sprint4End.PNG" width = "3000" />
 
 #### Output of Sprint 4 Review
 
 * List of Sprint Backlog items that were completed:
     * Updating README file after Sprint 3.
     * Adding Class diagram.
-    * To add Categoty of Source of Income and Purpose of Expenditure.
+    * To add Category of Source of Income and Purpose of Expenditure.
     * To Check for more Exceptions Handling.
     * To make GUI attractive by adding images and deleting extra windows that were not necessary.
  
 * List of Sprint Backlog items that could not be completed.
-    * Preparing Slides Dor Presentation.
+    * Preparing Slides for Presentation.
 
 #### Sprint 4 Retrospective
 * Things that went well:
@@ -179,20 +179,20 @@ The 3 layer project helps you to store your income and expenditure and can be vi
 #### What could I do differenthy next time?
 
 * WPF more atrractive and user friendly.
-* Use different pages instead of Windows in WPF to display fifferent contents.
-* Would have written more classes and linking them. Ex Expenditure class, Income class , People class, Savings class and relate each othre using foreign key.
+* Use different pages instead of Windows in WPF to display different contents.
+* Would have written more classes and linked them. Ex Expenditure class, Income class , People class, Savings class and relate each other using foreign key.
 * Once this was done it would have been easier to use OOPs concepts and SOLID principles.
 
 #### What could I do next?
 
 * Create an other class my name People and link them to Expenditure and Income class.
-* Using that to relate differents peoples income and expenditure and compare, calculate total household eependiture and add methods to calculate who borrowed from whom.
+* Using that to relate differents peoples income and expenditure and compare, calculate total household expenditure and add methods to calculate who borrowed from whom.
 
 ### Screenshot of Class Diagram:
 <img src ="ClassDiagram.PNG" width = "3000" />
 
 ### Screenshot of after completion of the project:
-<img src ="Sprint4Start.PNG" width = "3000" />
+<img src ="ProjectEnd.PNG" width = "3000" />
     
    
 
