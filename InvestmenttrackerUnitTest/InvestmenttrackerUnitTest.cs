@@ -3,6 +3,8 @@ using ManageAmount;
 using System.Collections.Generic;
 using System.Collections;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using Moq;
+using InvestmentTracker;
 
 namespace InvestmenttrackerUnitTest
 {
@@ -66,6 +68,22 @@ namespace InvestmenttrackerUnitTest
             IList collection = (System.Collections.IList)_mymanager.Monthly_Income();
             var output = collection[0].ToString();
             Assert.AreEqual("{ Month = 3, MonthlyIncome = 2300 }", output);
+        }
+
+        [Test]
+        [Ignore("Ignorethis")]
+        public void Testing_Total_Income_Using_Moq()
+        {
+            var mockIncome = new Mock<Income>();
+            mockIncome.SetReturnsDefault(100);
+
+            var mockExpenditure = new Mock<Expenditure>();
+
+            var _mynewmanager = new Manager(mockIncome.Object, mockExpenditure.Object);
+
+            var res = _mynewmanager.TotalIncome();
+
+            Assert.That(res, Is.EqualTo(100));
         }
 
 

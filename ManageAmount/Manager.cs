@@ -12,6 +12,9 @@ namespace ManageAmount
 {
     public class Manager
     {
+        private Income _incomemoney;
+        private Expenditure _expendituremoney;
+
         public Income SelectedIncome { get; set; }
         public Expenditure SelectedExpenditure { get; set; }
 
@@ -22,6 +25,12 @@ namespace ManageAmount
         public Manager()
         {
 
+        }
+
+        public Manager(Income incomemoney,Expenditure expendituremoney)
+        {
+            _incomemoney = incomemoney;
+            _expendituremoney = expendituremoney;
         }
         // To give options to the user on categories to select.
         public string[] DisplaysourceIncome()
@@ -101,7 +110,7 @@ namespace ManageAmount
         }
 
 
-        //To find the total income (Query the DataBase)
+        //To find the total income(Query the DataBase)
         public float TotalIncome()
         {
             float total = 0;
@@ -112,8 +121,9 @@ namespace ManageAmount
             return total;
         }
 
+        
 
-         // To find Total expenditure
+        // To find Total expenditure
         public float TotalExpenditure()
         {
             float total = 0;
