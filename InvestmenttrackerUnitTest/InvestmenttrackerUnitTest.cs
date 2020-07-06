@@ -70,21 +70,21 @@ namespace InvestmenttrackerUnitTest
             Assert.AreEqual("{ Month = 3, MonthlyIncome = 2300 }", output);
         }
 
-        [Test]
-        [Ignore("Ignorethis")]
-        public void Testing_Total_Income_Using_Moq()
-        {
-            var mockIncome = new Mock<Income>();
-            mockIncome.SetReturnsDefault(100);
+        //[Test]
+        //[Ignore("Ignorethis")]
+        //public void Testing_Total_Income_Using_Moq()
+        //{
+        //    var mockIncome = new Mock<Income>();
+        //    mockIncome.SetReturnsDefault(100);
 
-            var mockExpenditure = new Mock<Expenditure>();
+        //    var mockExpenditure = new Mock<Expenditure>();
 
-            var _mynewmanager = new Manager(mockIncome.Object, mockExpenditure.Object);
+        //    var _mynewmanager = new Manager(mockIncome.Object, mockExpenditure.Object);
 
-            var res = _mynewmanager.TotalIncome();
+        //    var res = _mynewmanager.TotalIncome();
 
-            Assert.That(res, Is.EqualTo(100));
-        }
+        //    Assert.That(res, Is.EqualTo(100));
+        //}
 
 
 

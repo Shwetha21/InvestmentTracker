@@ -111,7 +111,7 @@ namespace ManageAmount
 
 
         //To find the total income(Query the DataBase)
-        public float TotalIncome()
+        public virtual float TotalIncome()
         {
             float total = 0;
             using (var db = new InvestmentdbContext())
@@ -122,6 +122,7 @@ namespace ManageAmount
         }
 
         
+       
 
         // To find Total expenditure
         public float TotalExpenditure()
