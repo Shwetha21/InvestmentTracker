@@ -39,12 +39,12 @@ namespace InvestmenttrackerUnitTest
             Assert.AreEqual(1200, mybalance);
         }
 
-        [Test]
-        public void WhenIncomeAmountEnteredIsNotValidExceptionThrown()
-        {
-            var ex = Assert.Throws<System.Exception>(() => _mymanager.AddIncome(-1, ""));
-            Assert.AreEqual($"Invalid input or source of income is empty", ex.Message, "Exception message not correct");
-        }
+        //[Test]
+        //public void WhenIncomeAmountEnteredIsNotValidExceptionThrown()
+        //{
+        //    var ex = Assert.Throws<System.Exception>(() => _mymanager.AddIncome(-1, ""));
+        //    Assert.AreEqual($"Invalid input or source of income is empty", ex.Message, "Exception message not correct");
+        //}
 
         [Test]
         public void WhenExpenditureAmountEnteredIsNotValidExceptionThrown()
@@ -68,6 +68,13 @@ namespace InvestmenttrackerUnitTest
             IList collection = (System.Collections.IList)_mymanager.Monthly_Income();
             var output = collection[0].ToString();
             Assert.AreEqual("{ Month = 3, MonthlyIncome = 2300 }", output);
+        }
+
+        [Test]
+        public void DisplayPeopleName()
+        {
+            List<string> res = _mymanager.DisplayPeopleName();
+            Assert.AreEqual("", res);
         }
 
         //[Test]

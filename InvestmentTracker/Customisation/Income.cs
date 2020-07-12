@@ -8,7 +8,7 @@ namespace InvestmentTracker
     {
         public override string ToString()
         {
-            return $" {IncomeId} -- {Day} -- £{IncomeReceived} -- {SourceOfIncome}";
+            return $" {IncomeId} -- {Day} -- £{IncomeReceived} -- {SourceOfIncome} -- {PeopleId}";
         }
     }
 }

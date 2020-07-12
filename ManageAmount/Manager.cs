@@ -13,7 +13,10 @@ namespace ManageAmount
     public class Manager
     {
         private Income _incomemoney;
+
         private Expenditure _expendituremoney;
+
+        private People _people;
 
         public Income SelectedIncome { get; set; }
         public Expenditure SelectedExpenditure { get; set; }
@@ -22,17 +25,36 @@ namespace ManageAmount
 
         public string[] PurposeExpenditure { get; set; }
 
+        public string[] Name { get; set; }
+
         public Manager()
         {
 
         }
 
-        public Manager(Income incomemoney,Expenditure expendituremoney)
+        public Manager(Income incomemoney,Expenditure expendituremoney, People people)
         {
             _incomemoney = incomemoney;
             _expendituremoney = expendituremoney;
+            _people = people;
         }
         // To give options to the user on categories to select.
+
+        public List<string> DisplayPeopleName()
+        {
+            var listofnames = new List<string>();
+            using (var db = new InvestmentdbContext())
+            {
+                var QueryPeople = db.Peoples;
+                foreach( var p in QueryPeople)
+                {
+                   listofnames.Add(p.Name);
+                }
+
+                return listofnames;
+               
+            }
+        }
         public string[] DisplaysourceIncome()
         {
             IncomeSource = new string[] { "Salary", "Gift","Cash Back","Others"};
@@ -46,7 +68,7 @@ namespace ManageAmount
         }
 
         // Adding entry to database with exception handling
-        public void AddIncome(float amount, string source)
+        public void AddIncome(float amount, string source, string name)
         {
             if (amount <= 0 )
             {
@@ -56,7 +78,13 @@ namespace ManageAmount
             {
                 using (var db = new InvestmentdbContext())
                 {
-                    db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now, SourceOfIncome = source });
+                    var q1 = db.Peoples.Where(p => p.Name == name);
+
+                    foreach( var p in q1)
+                    {
+                        db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now, SourceOfIncome = source, PeopleId = p.PeopleId});
+                    }
+                    
                     db.SaveChanges();
                 }
                 

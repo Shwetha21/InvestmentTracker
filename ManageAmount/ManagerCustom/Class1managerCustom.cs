@@ -10,7 +10,7 @@ namespace ManageAmount
 
         private Income _incomemoney;
         private Expenditure _expendituremoney;
-        public Class1managerCustom(Income _incomemoney, Expenditure _expendituremoney) : base(_incomemoney, _expendituremoney)
+        public Class1managerCustom(Income _incomemoney, Expenditure _expendituremoney, People _people) : base(_incomemoney, _expendituremoney, _people)
         {
 
         }
