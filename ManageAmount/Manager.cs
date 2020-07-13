@@ -91,9 +91,9 @@ namespace ManageAmount
             }
         }
 
-        public void AddExpenditure(float amount, string purpose)
+        public void AddExpenditure(float amount, string purpose, string name)
         {
-            if (amount <= 0 || purpose == "")
+            if (amount <= 0)
             {
                 throw new Exception("Invalid input");
             }
@@ -101,7 +101,12 @@ namespace ManageAmount
             {
                 using (var db = new InvestmentdbContext())
                 {
-                    db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now, PurposeOfExpenditure = purpose });
+                    var q2 = db.Peoples.Where(p => p.Name == name);
+                    foreach (var p in q2)
+                    {
+                        db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now, PurposeOfExpenditure = purpose, PeopleId = p.PeopleId });
+                       
+                    }
                     db.SaveChanges();
                 }
                 

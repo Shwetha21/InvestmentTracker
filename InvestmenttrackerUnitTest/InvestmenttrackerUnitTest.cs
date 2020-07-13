@@ -46,12 +46,12 @@ namespace InvestmenttrackerUnitTest
         //    Assert.AreEqual($"Invalid input or source of income is empty", ex.Message, "Exception message not correct");
         //}
 
-        [Test]
-        public void WhenExpenditureAmountEnteredIsNotValidExceptionThrown()
-        {
-            var ex = Assert.Throws<System.Exception>(() => _mymanager.AddExpenditure(0, ""));
-            Assert.AreEqual($"Invalid input or pupose of expenditure is empty", ex.Message, "Exception message not correct");
-        }
+        //[Test]
+        //public void WhenExpenditureAmountEnteredIsNotValidExceptionThrown()
+        //{
+        //    var ex = Assert.Throws<System.Exception>(() => _mymanager.AddExpenditure(0, ""));
+        //    Assert.AreEqual($"Invalid input or pupose of expenditure is empty", ex.Message, "Exception message not correct");
+        //}
 
 
         [Test]
