@@ -2,11 +2,7 @@
 using InvestmentTracker;
 using System.Linq;
 using System.Collections.Generic;
-using System.Xml.Schema;
-using System.Reflection.Metadata;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using InvestmentTracker.Migrations;
+
 
 namespace ManageAmount
 {

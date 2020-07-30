@@ -73,7 +73,7 @@ namespace InvestmentTrackerWPF
                 }
                 catch 
                 {
-                    MessageBox.Show("Invalid input");
+                   MessageBox.Show("Invalid input");
                 }
             }
 
