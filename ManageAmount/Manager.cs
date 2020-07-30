@@ -2,21 +2,17 @@
 using InvestmentTracker;
 using System.Linq;
 using System.Collections.Generic;
-using System.Xml.Schema;
-using System.Reflection.Metadata;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using InvestmentTracker.Migrations;
+
 
 namespace ManageAmount
 {
     public class Manager
     {
-        private Income _incomemoney;
+        private readonly Income _incomemoney;
 
-        private Expenditure _expendituremoney;
+        private readonly Expenditure _expendituremoney;
 
-        private People _people;
+        private readonly People _people;
 
         public Income SelectedIncome { get; set; }
         public Expenditure SelectedExpenditure { get; set; }
