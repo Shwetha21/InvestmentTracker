@@ -36,22 +36,8 @@ namespace InvestmenttrackerUnitTest
         public void TestBalance()
         {
             float mybalance = _mymanager.BalanceCheck();
-            Assert.AreEqual(1200, mybalance);
+            Assert.AreEqual(5933, mybalance);
         }
-
-        //[Test]
-        //public void WhenIncomeAmountEnteredIsNotValidExceptionThrown()
-        //{
-        //    var ex = Assert.Throws<System.Exception>(() => _mymanager.AddIncome(-1, ""));
-        //    Assert.AreEqual($"Invalid input or source of income is empty", ex.Message, "Exception message not correct");
-        //}
-
-        //[Test]
-        //public void WhenExpenditureAmountEnteredIsNotValidExceptionThrown()
-        //{
-        //    var ex = Assert.Throws<System.Exception>(() => _mymanager.AddExpenditure(0, ""));
-        //    Assert.AreEqual($"Invalid input or pupose of expenditure is empty", ex.Message, "Exception message not correct");
-        //}
 
 
         [Test]
@@ -76,24 +62,6 @@ namespace InvestmenttrackerUnitTest
             List<string> res = _mymanager.DisplayPeopleName();
             Assert.AreEqual("", res);
         }
-
-        //[Test]
-        //[Ignore("Ignorethis")]
-        //public void Testing_Total_Income_Using_Moq()
-        //{
-        //    var mockIncome = new Mock<Income>();
-        //    mockIncome.SetReturnsDefault(100);
-
-        //    var mockExpenditure = new Mock<Expenditure>();
-
-        //    var _mynewmanager = new Manager(mockIncome.Object, mockExpenditure.Object);
-
-        //    var res = _mynewmanager.TotalIncome();
-
-        //    Assert.That(res, Is.EqualTo(100));
-        //}
-
-
 
     }
 }

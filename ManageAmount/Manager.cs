@@ -2,7 +2,7 @@
 using InvestmentTracker;
 using System.Linq;
 using System.Collections.Generic;
-
+using System.Collections;
 
 namespace ManageAmount
 {
@@ -16,12 +16,14 @@ namespace ManageAmount
 
         public Income SelectedIncome { get; set; }
         public Expenditure SelectedExpenditure { get; set; }
+        public People SelectedPeople { get; set; }
 
         public string[] IncomeSource { get; set; }
 
         public string[] PurposeExpenditure { get; set; }
 
         public string[] Name { get; set; }
+        
 
         public Manager()
         {
@@ -34,6 +36,9 @@ namespace ManageAmount
             _expendituremoney = expendituremoney;
             _people = people;
         }
+
+      
+
         // To give options to the user on categories to select.
 
         public List<string> DisplayPeopleName()
@@ -51,6 +56,9 @@ namespace ManageAmount
                
             }
         }
+
+       
+
         public string[] DisplaysourceIncome()
         {
             IncomeSource = new string[] { "Salary", "Gift","Cash Back","Others"};
@@ -109,8 +117,17 @@ namespace ManageAmount
             }
         }
 
+        public void AddPersonName(string PersonName)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                db.Add(new People {Name = PersonName});
+                db.SaveChanges();
+            }
+        }
 
-         // Display The data
+
+        // Display The data
         public List<Income> DisplayIncome()
         {
             using (var db = new InvestmentdbContext())
@@ -127,6 +144,15 @@ namespace ManageAmount
             }
         }
 
+        public List<People> DisplayPeople()
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                return db.Peoples.ToList();
+            }
+               
+        }
+
 
         public void SetSelectedIncome(object selectedItem)
         {
@@ -136,6 +162,10 @@ namespace ManageAmount
         public void SetSelectedExpenditure(object selectedItem)
         {
             SelectedExpenditure = (Expenditure)selectedItem;
+        }
+        public void SetSelectedPeople(object selectedItem)
+        {
+            SelectedPeople = (People)selectedItem;
         }
 
 
@@ -198,6 +228,25 @@ namespace ManageAmount
                     }
                 }
                 db.SaveChanges();
+            }
+        }
+
+        public void Delete_People(int id)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                var peopleId = db.Peoples.OrderBy(i => i.PeopleId);
+
+                foreach(var Pid in peopleId)
+                {
+                    if(Pid.PeopleId == id)
+                    {
+                        db.Remove(Pid);
+                    }
+                }
+
+                db.SaveChanges();
+
             }
         }
 
