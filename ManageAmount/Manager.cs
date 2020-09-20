@@ -2,28 +2,63 @@
 using InvestmentTracker;
 using System.Linq;
 using System.Collections.Generic;
-using System.Xml.Schema;
-using System.Reflection.Metadata;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using InvestmentTracker.Migrations;
+using System.Collections;
 
 namespace ManageAmount
 {
     public class Manager
     {
+        private readonly Income _incomemoney;
+
+        private readonly Expenditure _expendituremoney;
+
+        private readonly People _people;
+
         public Income SelectedIncome { get; set; }
         public Expenditure SelectedExpenditure { get; set; }
+        public People SelectedPeople { get; set; }
 
         public string[] IncomeSource { get; set; }
 
         public string[] PurposeExpenditure { get; set; }
 
+        public string[] Name { get; set; }
+        
+
         public Manager()
         {
 
         }
+
+        public Manager(Income incomemoney,Expenditure expendituremoney, People people)
+        {
+            _incomemoney = incomemoney;
+            _expendituremoney = expendituremoney;
+            _people = people;
+        }
+
+      
+
         // To give options to the user on categories to select.
+
+        public List<string> DisplayPeopleName()
+        {
+            var listofnames = new List<string>();
+            using (var db = new InvestmentdbContext())
+            {
+                var QueryPeople = db.Peoples;
+                foreach( var p in QueryPeople)
+                {
+                   listofnames.Add(p.Name);
+                }
+
+                return listofnames;
+               
+            }
+        }
+
+       
+
         public string[] DisplaysourceIncome()
         {
             IncomeSource = new string[] { "Salary", "Gift","Cash Back","Others"};
@@ -37,7 +72,7 @@ namespace ManageAmount
         }
 
         // Adding entry to database with exception handling
-        public void AddIncome(float amount, string source)
+        public void AddIncome(float amount, string source, string name)
         {
             if (amount <= 0 )
             {
@@ -47,16 +82,22 @@ namespace ManageAmount
             {
                 using (var db = new InvestmentdbContext())
                 {
-                    db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now, SourceOfIncome = source });
+                    var q1 = db.Peoples.Where(p => p.Name == name);
+
+                    foreach( var p in q1)
+                    {
+                        db.Add(new Income { IncomeReceived = amount, Day = DateTime.Now, SourceOfIncome = source, PeopleId = p.PeopleId});
+                    }
+                    
                     db.SaveChanges();
                 }
                 
             }
         }
 
-        public void AddExpenditure(float amount, string purpose)
+        public void AddExpenditure(float amount, string purpose, string name)
         {
-            if (amount <= 0 || purpose == "")
+            if (amount <= 0)
             {
                 throw new Exception("Invalid input");
             }
@@ -64,15 +105,29 @@ namespace ManageAmount
             {
                 using (var db = new InvestmentdbContext())
                 {
-                    db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now, PurposeOfExpenditure = purpose });
+                    var q2 = db.Peoples.Where(p => p.Name == name);
+                    foreach (var p in q2)
+                    {
+                        db.Add(new Expenditure { ExpenseAmount = amount, Day = DateTime.Now, PurposeOfExpenditure = purpose, PeopleId = p.PeopleId });
+                       
+                    }
                     db.SaveChanges();
                 }
                 
             }
         }
 
+        public void AddPersonName(string PersonName)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                db.Add(new People {Name = PersonName});
+                db.SaveChanges();
+            }
+        }
 
-         // Display The data
+
+        // Display The data
         public List<Income> DisplayIncome()
         {
             using (var db = new InvestmentdbContext())
@@ -89,6 +144,15 @@ namespace ManageAmount
             }
         }
 
+        public List<People> DisplayPeople()
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                return db.Peoples.ToList();
+            }
+               
+        }
+
 
         public void SetSelectedIncome(object selectedItem)
         {
@@ -99,10 +163,14 @@ namespace ManageAmount
         {
             SelectedExpenditure = (Expenditure)selectedItem;
         }
+        public void SetSelectedPeople(object selectedItem)
+        {
+            SelectedPeople = (People)selectedItem;
+        }
 
 
-        //To find the total income (Query the DataBase)
-        public float TotalIncome()
+        //To find the total income(Query the DataBase)
+        public virtual float TotalIncome()
         {
             float total = 0;
             using (var db = new InvestmentdbContext())
@@ -112,8 +180,10 @@ namespace ManageAmount
             return total;
         }
 
+        
+       
 
-         // To find Total expenditure
+        // To find Total expenditure
         public float TotalExpenditure()
         {
             float total = 0;
@@ -158,6 +228,25 @@ namespace ManageAmount
                     }
                 }
                 db.SaveChanges();
+            }
+        }
+
+        public void Delete_People(int id)
+        {
+            using (var db = new InvestmentdbContext())
+            {
+                var peopleId = db.Peoples.OrderBy(i => i.PeopleId);
+
+                foreach(var Pid in peopleId)
+                {
+                    if(Pid.PeopleId == id)
+                    {
+                        db.Remove(Pid);
+                    }
+                }
+
+                db.SaveChanges();
+
             }
         }
 

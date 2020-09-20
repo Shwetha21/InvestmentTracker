@@ -26,8 +26,13 @@ namespace InvestmentTrackerWPF
             PopulateExpenditureList();
             PopulateMonthyExpenditure();
             PopulateEpenditure();
+            PopulatePeopleName();
         }
-
+        private void PopulatePeopleName()
+        {
+            List<string> PeopleName = _manager.DisplayPeopleName();
+            PName.ItemsSource = PeopleName;
+        }
         private void PopulateEpenditure()
         {
             string[] POfExpenditure = _manager.DisplayPurposeExpenditure();
@@ -66,7 +71,7 @@ namespace InvestmentTrackerWPF
             {
                 try
                 {
-                    _manager.AddExpenditure(float.Parse(TextExpenditure.Text), PExpenditure.Text);
+                    _manager.AddExpenditure(float.Parse(TextExpenditure.Text), PExpenditure.Text , PName.Text);
 
                     PopulateExpenditureList();
                     PopulateMonthyExpenditure();

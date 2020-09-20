@@ -1,0 +1,69 @@
+﻿<Window x:Class="InvestmentTrackerWPF.People"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InvestmentTrackerWPF"
+        mc:Ignorable="d"
+        Title="People" Height="300" Width="700">
+    <Grid Background="#FF333364">
+        <Button Content="Back" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,1.906" Width="55" Height="30" Click="Back_Click" Background="#FF4C62B0"/>
+        <ListBox x:Name="ListBoxPeople" Margin="0,130,370,0"/>
+        <TextBox HorizontalAlignment="Left" Margin="98,79,0,0" Text="    People List" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.451,0.334" FontWeight="Normal" Background="#FFEEC9C9" Height="46"/>
+        <Grid Margin="330,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="143*" />
+                <RowDefinition Height="143*" />
+                <RowDefinition Height="143*" />
+
+
+
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label x:Name="LabelId" Grid.Row="0" Grid.Column="0" Background="Beige" FontWeight="Bold" >PeopleId</Label>
+
+            <Label x:Name="LabelPerson"  Grid.Row="1" Grid.Column="0" Background="Beige" FontWeight="Bold" Margin="0,0,0,93" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform> Person name
+            </Label>
+
+            <TextBox x:Name="TextId" Grid.Row="0" Grid.Column="1" Background="#FFF1F3F1" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
+
+            <TextBox x:Name="PersonName" Grid.Row="1" Grid.Column="1" Background="#FFF1F3F1" Height="95" VerticalAlignment="Center"/>
+
+
+
+            <Button x:Name="DELETE" Grid.Row="2" Grid.Column="1" Content="DELETE" FontSize="15" Click="ButtonDelete_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Red"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="ADD" Grid.Row="2" Grid.Column="0" Content="ADD" FontSize="15" Click="ButtonAdd_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+
+
+        </Grid>
+    </Grid>
+</Window>

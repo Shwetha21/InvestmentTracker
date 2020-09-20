@@ -26,6 +26,13 @@ namespace InvestmentTrackerWPF
             PopulateIncomeList();
             PopulateMonthyIncome();
             PopulateSIncome();
+            PopulatePeopleName();
+        }
+
+        private void PopulatePeopleName()
+        {
+            List<string> PeopleName = _manager.DisplayPeopleName();
+            PName.ItemsSource = PeopleName;
         }
 
         private void PopulateSIncome()
@@ -66,7 +73,7 @@ namespace InvestmentTrackerWPF
             {
                 try
                 {
-                    _manager.AddIncome(float.Parse(TextIncome.Text), SIncome.Text);
+                    _manager.AddIncome(float.Parse(TextIncome.Text), SIncome.Text, PName.Text);
 
                     PopulateIncomeList();
                     PopulateMonthyIncome();

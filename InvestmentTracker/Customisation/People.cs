@@ -4,11 +4,11 @@ using System.Text;
 
 namespace InvestmentTracker
 {
-    public partial class Income
+    public partial class People
     {
         public override string ToString()
         {
-            return $" {IncomeId} -- {Day} -- £{IncomeReceived} -- {SourceOfIncome} -- {PeopleId}";
+            return $" {PeopleId} -- {Name}";
         }
     }
 }

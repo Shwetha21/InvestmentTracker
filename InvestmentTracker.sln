@@ -12,9 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvestmenttrackerUnitTest", "InvestmenttrackerUnitTest\InvestmenttrackerUnitTest.csproj", "{C3D5ECEF-42AE-4BF9-88ED-03D3042F76AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestmenttrackerUnitTest", "InvestmenttrackerUnitTest\InvestmenttrackerUnitTest.csproj", "{C3D5ECEF-42AE-4BF9-88ED-03D3042F76AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestmentTrackerWPF", "InvestmentTrackerWPF\InvestmentTrackerWPF.csproj", "{D77E4361-40B3-4D99-8B3B-6F0121855D9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvestmentTrackerWPF", "InvestmentTrackerWPF\InvestmentTrackerWPF.csproj", "{024621A4-25DE-4179-B928-CAAD73AA247C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +34,10 @@ Global
 		{C3D5ECEF-42AE-4BF9-88ED-03D3042F76AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3D5ECEF-42AE-4BF9-88ED-03D3042F76AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3D5ECEF-42AE-4BF9-88ED-03D3042F76AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D77E4361-40B3-4D99-8B3B-6F0121855D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D77E4361-40B3-4D99-8B3B-6F0121855D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D77E4361-40B3-4D99-8B3B-6F0121855D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D77E4361-40B3-4D99-8B3B-6F0121855D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024621A4-25DE-4179-B928-CAAD73AA247C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024621A4-25DE-4179-B928-CAAD73AA247C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024621A4-25DE-4179-B928-CAAD73AA247C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024621A4-25DE-4179-B928-CAAD73AA247C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
