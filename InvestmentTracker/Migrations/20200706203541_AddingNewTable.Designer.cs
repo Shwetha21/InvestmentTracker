@@ -4,14 +4,16 @@ using InvestmentTracker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InvestmentTracker.Migrations
 {
     [DbContext(typeof(InvestmentdbContext))]
-    partial class InvestmentdbContextModelSnapshot : ModelSnapshot
+    [Migration("20200706203541_AddingNewTable")]
+    partial class AddingNewTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,15 +34,10 @@ namespace InvestmentTracker.Migrations
                     b.Property<float>("ExpenseAmount")
                         .HasColumnType("real");
 
-                    b.Property<int>("PeopleId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PurposeOfExpenditure")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ExpenditureId");
-
-                    b.HasIndex("PeopleId");
 
                     b.ToTable("Expenditures");
                 });
@@ -58,48 +55,50 @@ namespace InvestmentTracker.Migrations
                     b.Property<float>("IncomeReceived")
                         .HasColumnType("real");
 
-                    b.Property<int>("PeopleId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SourceOfIncome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IncomeId");
-
-                    b.HasIndex("PeopleId");
 
                     b.ToTable("Incomes");
                 });
 
             modelBuilder.Entity("InvestmentTracker.People", b =>
                 {
-                    b.Property<int>("PeopleId")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ExpenditureId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IncomeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PeopleId");
+                    b.HasKey("ID");
+
+                    b.HasIndex("ExpenditureId");
+
+                    b.HasIndex("IncomeId");
 
                     b.ToTable("Peoples");
                 });
 
-            modelBuilder.Entity("InvestmentTracker.Expenditure", b =>
+            modelBuilder.Entity("InvestmentTracker.People", b =>
                 {
-                    b.HasOne("InvestmentTracker.People", "People")
-                        .WithMany("Expenditures")
-                        .HasForeignKey("PeopleId")
+                    b.HasOne("InvestmentTracker.Expenditure", "Expenditure")
+                        .WithMany("Peoples")
+                        .HasForeignKey("ExpenditureId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("InvestmentTracker.Income", b =>
-                {
-                    b.HasOne("InvestmentTracker.People", "People")
-                        .WithMany("Incomes")
-                        .HasForeignKey("PeopleId")
+                    b.HasOne("InvestmentTracker.Income", "Income")
+                        .WithMany("Peoples")
+                        .HasForeignKey("IncomeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

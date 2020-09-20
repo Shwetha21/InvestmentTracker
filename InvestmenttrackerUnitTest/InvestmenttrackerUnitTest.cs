@@ -3,6 +3,8 @@ using ManageAmount;
 using System.Collections.Generic;
 using System.Collections;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using Moq;
+using InvestmentTracker;
 
 namespace InvestmenttrackerUnitTest
 {
@@ -34,21 +36,7 @@ namespace InvestmenttrackerUnitTest
         public void TestBalance()
         {
             float mybalance = _mymanager.BalanceCheck();
-            Assert.AreEqual(1200, mybalance);
-        }
-
-        [Test]
-        public void WhenIncomeAmountEnteredIsNotValidExceptionThrown()
-        {
-            var ex = Assert.Throws<System.Exception>(() => _mymanager.AddIncome(-1, ""));
-            Assert.AreEqual($"Invalid input", ex.Message, "Exception message not correct");
-        }
-
-        [Test]
-        public void WhenExpenditureAmountEnteredIsNotValidExceptionThrown()
-        {
-            var ex = Assert.Throws<System.Exception>(() => _mymanager.AddExpenditure(0, ""));
-            Assert.AreEqual($"Invalid input", ex.Message, "Exception message not correct");
+            Assert.AreEqual(5933, mybalance);
         }
 
 
@@ -68,7 +56,12 @@ namespace InvestmenttrackerUnitTest
             Assert.AreEqual("{ Month = 3, MonthlyIncome = 2300 }", output);
         }
 
-
+        [Test]
+        public void DisplayPeopleName()
+        {
+            List<string> res = _mymanager.DisplayPeopleName();
+            Assert.AreEqual("", res);
+        }
 
     }
 }

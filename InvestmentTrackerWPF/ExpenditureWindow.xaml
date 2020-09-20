@@ -19,6 +19,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
 
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -29,11 +30,13 @@
             <Label x:Name="LabelDate" Grid.Row="1" Grid.Column="0" Background="Beige" FontWeight="Bold">Date</Label>
             <Label x:Name="LabelExpenditure" Grid.Row="2" Grid.Column="0" Background="Beige" FontWeight="Bold">Expenditure</Label>
             <Label x:Name="LabelPurpose" Grid.Row="3" Grid.Column="0" Background="Beige" FontWeight="Bold">Purpose Of Expenditure</Label>
+            <Label x:Name="LabelPersomName" Grid.Row="4" Grid.Column="0" Background="Beige" FontWeight="Bold">Name</Label>
             <TextBox x:Name="TextId" Grid.Row="0" Grid.Column="1" Background="#FFF2F7F2" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
             <TextBox x:Name="TextDate" Grid.Row="1" Grid.Column="1" Background="#FFF7FBF7" IsEnabled="False" IsReadOnlyCaretVisible="True"></TextBox>
             <TextBox x:Name="TextExpenditure" Grid.Row="2" Grid.Column="1" Background="#FFF1F3F1"></TextBox>
-            <ComboBox x:Name="PExpenditure" IsEditable="True" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="185" Height="72"/>
-            <Button x:Name="ExpenditureADD" Grid.Row="4" Grid.Column="1" Content="ADD EXPENDITURE" FontSize="15" Click="ButtonAddExpenditure_Click">
+            <ComboBox x:Name="PExpenditure" IsEditable="True" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="185" Height="52"/>
+            <ComboBox x:Name="PName" IsEditable="True" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="185" Height="52"/>
+            <Button x:Name="ExpenditureADD" Grid.Row="5" Grid.Column="1" Content="ADD EXPENDITURE" FontSize="15" Click="ButtonAddExpenditure_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -41,7 +44,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="TotalExpenditure" Grid.Row="5" Grid.Column="1" Content="TOTAL EXPENDITURE" FontSize="15" Click="ButtonTotal_Click">
+            <Button x:Name="TotalExpenditure" Grid.Row="6" Grid.Column="1" Content="TOTAL EXPENDITURE" FontSize="15" Click="ButtonTotal_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -49,7 +52,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="DELETE" Grid.Row="5" Grid.Column="0" Content="DELETE" FontSize="15" Click="ButtonDELETE_Click">
+            <Button x:Name="DELETE" Grid.Row="6" Grid.Column="0" Content="DELETE" FontSize="15" Click="ButtonDELETE_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Red"/>
@@ -57,7 +60,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="UPDATE" Grid.Row="4" Grid.Column="0" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click">
+            <Button x:Name="UPDATE" Grid.Row="5" Grid.Column="0" Content="UPDATE" FontSize="15" Click="ButtonUPDATE_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
